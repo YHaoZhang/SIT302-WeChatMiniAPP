@@ -1,0 +1,27 @@
+<!--pages/events/eventsDetails/ComingEvents_choose/ComingEvents_more/ComingEvents_more.wxml-->
+<!--pages/events/eventsDetails/eventsDetails.wxml-->
+<image class='back_img' mode='aspectFill' src='../../../../../img/bga.png'></image>
+<view  class='content'>
+    <view class='cell'>
+        <image mode='widthFix' src='../../../../../img/dekin.png'></image>
+				<view class="txt-box">
+					<text class="tit">Deakin University Preaching</text>
+				</view>
+    </view>
+
+    <view class="detail-txt">
+			<view class="box">
+				<text class='name'>Time:</text>
+				<text class='timer'>9:00am-10:00am,
+				Monday, 9 September</text>
+			</view>
+			<view class="box">
+				<text class='name'>Location:</text>
+				<text class='timer'>Level 15, 190 Queen Street
+						Melbourne</text>
+			</view>
+		</view>
+
+    <text class="more" bindtap="moreClick" id='{{index}}'>Details</text>
+
+</view>

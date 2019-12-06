@@ -1,0 +1,13 @@
+<!--pages/events/events.wxml-->
+<image class='back_img' mode='aspectFill' src='../../../../img/bga.png'></image>
+<scroll-view  scroll-y="true" class='content'>
+    <view class='cell' wx:for="{{data}}" wx:key="item.index">
+        <image mode='widthFix' src='../../../../img/dekin.png'></image>
+				<view class="txt-box">
+					<text class="tit">Deakin University Preaching</text>
+					<text class="info">Deakin University Presentation.</text>
+					<text class="more" bindtap="moreClick" id='{{index}}'>Learn More</text>
+				</view>
+    </view>
+</scroll-view>
+

@@ -1,0 +1,60 @@
+/* pages/index/SignUp/SignUp.wxss */
+.h2{
+    width: 100%;
+    font-size: 48rpx;
+    float: left;
+    font-weight: bold;
+    line-height: 58rpx;
+    margin-top: 30rpx;
+}
+input{
+    background-color: rgba(239, 239, 239, 0.7);
+    border-radius: 40rpx;
+    margin-top: 32rpx;
+    width: 90%;
+    float: left;
+    height: 112rpx;
+    font-size: 30rpx;
+    padding:0 5%;
+}
+
+.xieyi{
+  width: 100%;
+  float: left;
+  font-size: 24rpx;
+  margin-top: 45rpx;
+}
+.xieyi checkbox .wx-checkbox-input {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 10rpx;
+}
+.xieyi checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #5abd8c;
+}
+.xieyi checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 48rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  text-align: center;
+  font-size: 48rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.xieyi text{
+  float: right;
+  line-height: 48rpx;
+}
+button{
+    color: #5abd8c;
+    border-radius: 40rpx;
+    margin-top: 50rpx;
+    width: 100%;
+    float: left;
+    height: 112rpx;
+    font-size: 30rpx;
+    line-height: 112rpx;
+    border: solid 1px #5abd8c;
+}

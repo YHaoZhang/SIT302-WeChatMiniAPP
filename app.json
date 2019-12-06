@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/SignUp/SignUp",
+    "pages/index/SignIn/SignIn",
+    "pages/index/AdminSlider/AdminSlider",
+  "pages/index/AdminSlider/Publish/Publish",
+
+
+    "pages/home/home",
+    "pages/events/events",
+    "pages/events/eventsDetails/eventsDetails",
+    "pages/events/eventsDetails/ComingEvents_choose/ComingEvents_choose",
+    "pages/events/eventsDetails/ComingEvents_choose/ComingEvents_more/ComingEvents_more",
+    "pages/events/eventsDetails/ComingEvents_choose/ComingEvents_more/CustomerDetails/CustomerDetails",
+    
+"pages/events/eventsDetails/ComingEvents_choose/ComingEvents_more/CompleteDetails/CompleteDetails",   
+
+
+    "pages/chat/chat",
+
+
+    "pages/profile/profile",
+    "pages/profile/Notifications/Notifications",
+    "pages/profile/Account/Account",
+    "pages/profile/Help/Help"
+    
+    
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#5abd8c",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#929292",
+    "selectedColor": "#fff",
+    "borderStyle": "white",
+    "backgroundColor": "#5abd8c",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "img/home-g.png",
+        "selectedIconPath": "img/home-w.png",
+        "text": "Home"
+      },
+      {
+        "pagePath": "pages/events/events",
+        "iconPath": "img/calendar-g.png",
+        "selectedIconPath": "img/calendar-w.png",
+        "text": "Events"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "iconPath": "img/conversation-g.png",
+        "selectedIconPath": "img/conversation-w.png",
+        "text": "Chat"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "iconPath": "img/user-g.png",
+        "selectedIconPath": "img/user-w.png",
+        "text": "Profile"
+      }
+    ]
+  },
+  "permission": {},
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

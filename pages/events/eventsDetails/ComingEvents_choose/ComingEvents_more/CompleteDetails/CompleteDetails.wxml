@@ -1,0 +1,12 @@
+<!--pages/events/eventsDetails/ComingEvents_choose/ComingEvents_more/CompleteDetails/CompleteDetails.wxml-->
+<image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
+<view  class='content'>
+		<view class="title">
+		  	<text>Complete Your Details</text>
+		</view>
+		<view class='tetx_v'>
+			<input type="text" class="input-item" placeholder="Name"></input>
+			<input type="text" class="input-item" placeholder="Phone number"></input>
+      <button form-type='submit' bindtap='formSubmit' style='background: {{bbb}};'>Finish</button>
+		</view>
+</view>

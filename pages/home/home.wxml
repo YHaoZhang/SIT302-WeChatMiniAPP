@@ -1,0 +1,18 @@
+<!--pages/home/home.wxml-->
+<view class='banner'>
+      <swiper indicator-dots='true' indicator-color='gray' indicator-active-color='white' autoplay='true'>
+        <block wx:for="{{banner}}" wx:key="item.index">
+          <swiper-item>
+           <image mode='aspectFill' src='../../img/slider.png'></image>
+          </swiper-item>
+        </block>
+      </swiper>
+</view>
+	<view class="main-box">
+		<text >Our main services</text>
+		<image src="../../img/main.png" mode='aspectFit'></image>
+	</view>
+	<view class="coop-box">
+		<text >Cooperatives</text>
+		<image src="../../img/coop.png" mode="aspectFill"></image>
+	</view>

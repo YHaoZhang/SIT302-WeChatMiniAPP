@@ -1,0 +1,20 @@
+<!--pages/index/SignUp/SignUp.wxml-->
+<!--pages/index/index.wxml-->
+<view class='content'>
+    <text class='h2'>Sign  Up</text>
+    <input type="text" placeholder="First & Last Name"> </input>
+    <input type="text" placeholder="Mobile Phone"></input>
+    <input type="text" placeholder="Group Special Code (optional)"></input>
+    <input type="email" placeholder="Email"></input>
+    <input type="password" placeholder="Password"></input>
+
+    <view class='xieyi' >
+          <checkbox-group bindchange="niming">
+          <checkbox name="box_check" value='{{if_dinaji}}'></checkbox>
+      Please sign me up for the monthly newsletter.
+        </checkbox-group>
+        
+    </view> 
+
+    <button form-type='submit' bindtap='formSubmit' >Sign  Up</button>
+</view>

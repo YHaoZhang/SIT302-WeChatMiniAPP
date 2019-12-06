@@ -1,0 +1,73 @@
+/* pages/chat/chat.wxss */
+.content_up{
+  width: 100%;
+  float: left;
+  height: 90%;
+}
+.cell{
+  width: 100%;
+  float: left;
+  margin-top: 30rpx;
+}
+.cell image{
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+  margin-top: 20rpx;
+}
+.cell .neir{
+  width: 425rpx;
+  float: left;
+  background-color: #2699fb;
+  padding: 30rpx;
+    font-size: 28rpx;
+    line-height: 48rpx;
+    letter-spacing: 0px;
+    color: #ffffff;
+    border-radius: 10rpx;
+}
+.cell .jiao {
+    float: left;
+    margin-left: 35rpx;
+    margin-top: 20rpx;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #2699fb;
+}
+.isyoub image{
+    float: right;
+}
+.isyoub .jiao2{
+    float: right;
+    margin-right: 35rpx;
+    margin-left: 0rpx;
+    margin-top: 20rpx;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid white;
+}
+.isyoub .neir{
+    float: right;
+    background: white;
+    color: #2699fb
+}
+.dibu{
+  position: absolute;
+  bottom: 0;
+  left: -5.5%;
+  width: 111.11%;
+  height: 10%;
+  border: 1px solid rgba(222, 222, 222, 0.4);
+}
+.dibu input{
+  float: left;
+  width: 70%;
+  height: 100%;
+  margin-left: 10%;
+}
+.dibu image{
+  float: left;
+  width: 20%;
+  height: 50%;
+  margin-top: 2.5vh
+}

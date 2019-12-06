@@ -1,0 +1,19 @@
+<!--pages/index/index.wxml-->
+<image class='back_imge' src="/img/bg.png" mode='aspectFill'></image>
+<view class='content'>
+    <!-- <text class='Sign' bindtap="signClick" id='0'>Sign Up</text>
+    <text bindtap="signClick" id='1'>Sign In with ACIC</text>
+    <text bindtap="signClick" id='2'>Sign In with WeChat</text> -->
+    <!-- <button open-type="getUerInfo" bindgetuserinfo='getUerInfo'>登录</button> -->
+   <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      size="default"
+    ></button>
+    <view class="userinfo-nickname-wrapper">
+      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+    </view>
+
+</view>
+

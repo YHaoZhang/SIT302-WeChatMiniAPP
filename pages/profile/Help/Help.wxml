@@ -1,0 +1,18 @@
+<!--pages/profile/Help/Help.wxml-->
+<image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
+<view class='content'>
+    <text class='name_header'>
+			Need some help?
+			Contact us!
+		</text>
+
+    <view class='cell' wx:for="{{dataSores}}" wx:key="item.index">
+        <view class='header' id='header{{index}}'>
+          <image mode='aspectFit' src='{{item.image}}'></image>
+			    <text>{{item.name}}</text>
+        </view>
+        <image wx:if="{{index == 4}}" class='image2' mode='aspectFit' src='{{item.content}}'></image>
+        <text  wx:if="{{index!= 4}}"class='text2' >{{item.content}}</text>
+    </view>
+</view>
+

@@ -1,0 +1,7 @@
+<!--pages/events/eventsDetails/ComingEvents_choose/ComingEvents_more/CustomerDetails/CustomerDetails.wxml-->
+<image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
+<view  class='content'>
+		<view class='tetx_v'>
+        <text wx:for="{{data}}" wx:key="item.index">tom</text>
+		</view>
+</view>

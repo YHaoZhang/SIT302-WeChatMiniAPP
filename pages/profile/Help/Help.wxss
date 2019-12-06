@@ -1,0 +1,72 @@
+/* pages/profile/Help/Help.wxss */
+.name_header{
+   font-size: 48rpx;
+    line-height: 60rpx;
+    color: #ffffff;
+    display: block;
+    font-weight: bold;
+    float: left;
+}
+.cell{
+    width: 100%;
+    float: left;
+    margin-top: 60rpx;
+}
+.cell .header{
+  width: 100%;
+  float: left;
+}
+.cell .header image{
+  width: 50rpx;
+  height: 50rpx;
+  float: left;
+}
+.cell .header text{
+    font-size: 32rpx;
+    line-height: 50rpx;
+    float: left;
+    margin-left: 30rpx;
+    font-weight: bold;
+    color: #5abd8c;
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+}
+.cell #header0 text{
+  color: white
+}
+.cell .text2{
+  margin-left: 80rpx;
+  float: left;
+  margin-top: 30rpx;
+  font-size: 36rpx;
+  line-height: 44rpx;
+  color: #707070;
+}
+
+.cell .image2{
+  margin-left: 80rpx;
+  float: left;
+  width: 50%;
+  height: 50vw;
+  margin-top: 30rpx;
+}
+  /* .cell image{
+    float: right;
+    
+}
+/* .cell image{
+  float: right;
+  margin-right: 30rpx;
+  width: 110rpx;
+  height: 110rpx;
+  margin-top: 20rpx;
+}
+.cell text{
+  height: 100%;
+  line-height: 160rpx;
+  float: left;
+  margin-left: 30rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #2699fb;
+} */
+

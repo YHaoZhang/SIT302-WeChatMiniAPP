@@ -1,0 +1,18 @@
+
+<view class='content'>
+    <text class='h2'>Sign In</text>
+    <input type="text" placeholder="Optional Group Special Code"> </input>
+    <input type="email" placeholder="Email Address"></input>
+    <input type="password" placeholder="Password"></input>
+
+    <view class='xieyi' >
+          <checkbox-group bindchange="niming">
+          <checkbox name="box_check" value='{{if_dinaji}}'></checkbox>
+      Stay Logged In
+          <text>Forgot Your Password?</text>
+        </checkbox-group>
+        
+    </view> 
+
+    <button form-type='submit' bindtap='formSubmit' >Sign In</button>
+</view>

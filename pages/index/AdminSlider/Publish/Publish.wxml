@@ -1,0 +1,16 @@
+<!--pages/index/AdminSlider/Publish/Publish.wxml-->
+
+<view class='content'>
+    <text class='h2'>Publish an event</text>
+    <input type="text" placeholder="event nane" disabled='{{isDisabled}}'> </input>
+    <input type="text" placeholder="event time" disabled='{{isDisabled}}'></input>
+    <input type="text" placeholder="event location" disabled='{{isDisabled}}'></input>
+
+    <button class='but1' form-type='file' bindtap='poster' >Choose a poster</button>
+    <view class='image_v'>
+        <text wx:if="{{carWin_img_hidden == true}}">预览</text>
+        <image wx:if="{{carWin_img_hidden == false}}" mode='aspectFit' src='{{carWin_img}}'></image>
+        
+    </view>
+    <button form-type='submit' bindtap='publish' >Publish</button>
+</view>

@@ -1,0 +1,6 @@
+<!--pages/index/AdminSlider/AdminSlider.wxml-->
+<image class='back_imge' src="/img/logo.png" mode='aspectFit'></image>
+<view class='content'>
+    <text class='Sign' bindtap="signClick" id='0'>Publish an event</text>
+    <text bindtap="signClick" id='1'>View events</text>
+</view>

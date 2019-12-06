@@ -1,0 +1,27 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.content{
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  left: 5%;
+  top: 0;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.back_img{
+  width: 100%;
+  float: left;
+}
+button::after{ border: none; }
