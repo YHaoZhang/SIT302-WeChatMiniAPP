@@ -2,7 +2,6 @@
 <image class='back_imge' src="/img/bg.png" mode='aspectFill'></image>
 <view class='content'>
     <view class="userinfo-nickname-wrapper">
-      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
       <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击获取 userInfo</button>
     </view>
 </view>
