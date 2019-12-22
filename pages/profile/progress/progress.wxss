@@ -1,0 +1,43 @@
+/* pages/profile/progress/progress.wxss */
+.list-img{
+  width:40rpx;
+  height:40rpx;
+  margin:10rpx 10rpx 0rpx 35rpx;
+}
+.list_centent{
+  position: absolute;
+  left: 90rpx;
+  font-size: 28rpx;
+  color: #666666;
+   width: calc(100% - 115rpx);
+}
+.icon{
+  width: 25rpx;
+  height:25rpx;
+  background: white;
+  border-radius: 50%;
+  display: inline-block;
+  margin:0rpx 10rpx 0rpx 40rpx;
+}
+.in{
+  border: 1rpx solid #007aca;
+  animation: my_animation 2s infinite;
+}
+ 
+@keyframes my_animation{
+    100% {  
+    transform: scale(1.5);  
+    background-color: transparent;  
+    }  
+}
+ 
+.no_in{
+  border: 1rpx solid #d0d0d0;
+  background: #d0d0d0;
+}
+.on{
+  background: #d0d0d0;
+  height: 135rpx;
+  width: 1px;
+  margin-left: 50rpx;
+}

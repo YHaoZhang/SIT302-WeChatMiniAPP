@@ -1,4 +1,4 @@
-// pages/profile/profile.js
+// pages/search/searchResults/searchDetails/searchDetails.js
 Page({
 
   /**
@@ -7,39 +7,11 @@ Page({
   data: {
 
   },
-  manageActivities: function (e) {
-    var idx = parseInt(e.currentTarget.id);
-    wx.navigateTo({
-      url: '../index/AdminSlider/AdminSlider' ,
-    })
-  },
-  moreClick:function(e){
-    var idx = parseInt(e.currentTarget.id);
-    if(idx==0){
-      wx.navigateTo({
-        url: 'Notifications/Notifications',
-      })
-    }else if(idx==1){
-      wx.navigateTo({
-        url: 'Account/Account',
-      })
-    }else if(idx==2){
-      wx.navigateTo({
-        url: 'Help/Help',
-      })
-    }else if(idx==3){
-      wx.navigateTo({
-        url: 'progress/progress',
-      })
-    }else {
-    }
-
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // options.str
   },
 
   /**

@@ -1,0 +1,26 @@
+<!--pages/search/searchResults/searchDetails/searchDetails.html-->
+<image class='back_img' mode='aspectFill' src='../../../../img/bga.png'></image>
+<view  class='content'>
+    <view class='cell'>
+        <image mode='widthFix' src='../../../../img/dekin.png'></image>
+				<view class="txt-box">
+					<text class="tit">Deakin University</text>
+				</view>
+    </view>
+
+    <view class="detail-txt">
+			<view class="box">
+				<text class='name'>Introduction:</text>
+				<text class='timer'>Deakin University is a public university in Victoria, Australia. Established in 1974 with the passage of the Deakin University Act 1974, the university was named after the second Prime Minister of Australia, Alfred Deakin.
+
+Its main campuses are in Melbourne's Burwood suburb, Geelong Waurn Ponds, Geelong Waterfront and Warrnambool, as well as the online Cloud Campus. Deakin also has learning centres in Dandenong, Craigieburn and Werribee, all in the state of Victoria.
+
+Deakin is one of Australia's fastest growing research universities. 89% of Deakin's research is rated at or above world class. Its combined research funding increased from A$4.5 million in 1997 to A$47.2 million in 2015.</text>
+			</view>
+			<!-- <view class="box">
+				<text class='name'>Location:</text>
+				<text class='timer'>Level 15, 190 Queen Street
+						Melbourne</text>
+			</view> -->
+		</view>
+</view>

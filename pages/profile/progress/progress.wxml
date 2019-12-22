@@ -1,0 +1,16 @@
+<!--pages/profile/progress/progress.wxml-->
+<block wx:for="{{list}}" wx:key>
+    <view class='order'>
+      <view wx:if="{{index==0}}" class='icon in'></view>
+      <view wx:if="{{index!=0 && index!=wuliu.length-1 && index!=wuliu.length-2}}" class='icon no_in'></view>
+      <image wx:if="{{index==wuliu.length-2}}" src="../../images/icon/service.png" class="list-img"></image>
+      <image wx:if="{{index==wuliu.length-1}}" src="../../images/icon/home.png" class="list-img"></image>
+      <view class='list_centent'>
+        <view class="tips">【{{item.status}}】</view>
+        <view class='tips'> {{item.time}}</view>
+      </view>
+      <view class='on'>
+      </view>
+    </view>
+  </block>
+<view wx:if="{{index!=0}}" class='icon no_in'></view>

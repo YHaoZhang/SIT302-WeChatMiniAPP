@@ -1,0 +1,13 @@
+<!--pages\search\searchResults\searchResults.wxml-->
+<image class='back_img' mode='aspectFill' src='../../../img/bga.png'></image>
+<scroll-view  scroll-y="true" class='content'>
+    <view class='cell' wx:for="{{data}}" wx:key="index">
+        <image mode='widthFix' src='../../../img/dekin.png'></image>
+				<view class="txt-box">
+					<text class="tit">Deakin University</text>
+					<text class="info">Top 1% of universities worldwide.</text>
+					<text class="more" bindtap="moreClick" id='{{index}}'>Learn More</text>
+				</view>
+    </view>
+</scroll-view>
+

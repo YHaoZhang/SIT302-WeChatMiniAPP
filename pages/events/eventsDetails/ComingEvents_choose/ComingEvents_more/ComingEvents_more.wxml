@@ -20,6 +20,10 @@
 				<text class='timer'>Level 15, 190 Queen Street
 						Melbourne</text>
 			</view>
+      <view class="box">
+				<text class='name'>Registed People:</text>
+				<text class='timer'>666</text>
+			</view>
 		</view>
 
     <text class="more" bindtap="moreClick" id='{{index}}'>Details</text>

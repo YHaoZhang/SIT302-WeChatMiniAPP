@@ -6,7 +6,7 @@
 			Contact us!
 		</text>
 
-    <view class='cell' wx:for="{{dataSores}}" wx:key="item.index">
+    <view class='cell' wx:for="{{dataSores}}" wx:key="index">
         <view class='header' id='header{{index}}'>
           <image mode='aspectFit' src='{{item.image}}'></image>
 			    <text>{{item.name}}</text>

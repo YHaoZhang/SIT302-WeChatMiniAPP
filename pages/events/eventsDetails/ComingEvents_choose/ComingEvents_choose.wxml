@@ -1,12 +1,12 @@
-<!--pages/events/events.wxml-->
+<!--pages/events/eventsDetails/ComingEvents_choose/ComingEvents_choose.wxml-->
 <image class='back_img' mode='aspectFill' src='../../../../img/bga.png'></image>
 <scroll-view  scroll-y="true" class='content'>
-    <view class='cell' wx:for="{{data}}" wx:key="item.index">
+    <view class='cell' wx:for="{{data}}" wx:key="index">
         <image mode='widthFix' src='../../../../img/dekin.png'></image>
 				<view class="txt-box">
 					<text class="tit">Deakin University Preaching</text>
 					<text class="info">Deakin University Presentation.</text>
-					<text class="more" bindtap="moreClick" id='{{index}}'>Learn More</text>
+					<text class="more" bindtap="moreClick" id='{{index}}'>Manage</text>
 				</view>
     </view>
 </scroll-view>

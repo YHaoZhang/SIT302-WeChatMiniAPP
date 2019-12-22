@@ -7,7 +7,8 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
   onLoad: function () {
@@ -25,26 +26,30 @@ Page({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
-              this.setData({
-                avatarUrl: res.userInfo.avatarUrl,
-                userInfo: res.userInfo
-              })
+              var userInfo = res.userInfo
+              console.log(res.userInfo)              
             }
           })
         }
       }
     })
   },
-
-  onGetUserInfo: function (e) {
-    if (!this.data.logged && e.detail.userInfo) {
-      this.setData({
-        logged: true,
-        avatarUrl: e.detail.userInfo.avatarUrl,
-        userInfo: e.detail.userInfo
-      })
-    }
+  bindGetUserInfo (e) {
+    console.log(e.detail.userInfo)
   },
+
+  // onGetUserInfo: function (e) {
+  //   if (!this.data.logged && e.detail.userInfo) {
+  //     this.setData({
+  //       logged: true,
+  //       avatarUrl: e.detail.userInfo.avatarUrl,
+  //       userInfo: e.detail.userInfo,
+  //       success: res => {
+  //         console.log(e.detail.userInfo)
+  //       },
+  //     })
+  //   }
+  // },
 
   onGetOpenid: function () {
     // 调用云函数
@@ -52,11 +57,11 @@ Page({
       name: 'login',
       data: {},
       success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
+        console.log('[云函数] [login] user info: ', res)
         app.globalData.openid = res.result.openid
-        // wx.navigateTo({
-        //   url: '../userConsole/userConsole',
-        // })
+        wx.switchTab({
+          url: '../home/home',
+        })
       },
       fail: err => {
         console.error('[云函数] [login] 调用失败', err)

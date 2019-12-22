@@ -1,6 +1,7 @@
 <!--pages/profile/profile.wxml-->
 <image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
 <view class='content'>
+
   <view class="grxx">
       <image mode='aspectFill' src='../../img/tx.png'></image>
 			<view class="fl" >
@@ -9,11 +10,10 @@
 			</view>
   </view> 
 
-
   <view class="link-box">
 			<view bindtap="moreClick" id='0'> 
         <image mode='aspectFill' src='../../img/event.png'></image>
-				<text>Events</text>
+				<text>My events</text>
 			</view>
 			<view bindtap="moreClick" id='1'>
         <image mode='aspectFill' src='../../img/account.png'></image>
@@ -23,7 +23,28 @@
         <image mode='aspectFill' src='../../img/Help.png'></image>
         <text>Help</text>
 			</view>
-		</view>
+      <view bindtap="moreClick" id='3'>
+        <image mode='aspectFill' src='../../img/process.png'></image>
+        <text>Application process</text>
+			</view>
+      <view bindtap="moreClick" id='4'>
+        <image mode='aspectFill' src='../../img/customer-service.png'></image>
+        <text>Customer Service</text>
+        <button open-type='contact'>service</button>
+			</view>
+      
+	</view> 
+
+  <view class="manage">
+      <button bindtap="manageActivities">Manage Activities</button>
+  </view>
 
 </view>
+
+
+
+
+  
+
+
 

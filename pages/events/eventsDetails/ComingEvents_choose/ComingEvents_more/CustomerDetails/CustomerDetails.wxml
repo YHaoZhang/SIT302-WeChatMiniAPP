@@ -2,6 +2,6 @@
 <image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
 <view  class='content'>
 		<view class='tetx_v'>
-        <text wx:for="{{data}}" wx:key="item.index">tom</text>
+        <text wx:for="{{data}}" wx:key="index">tom</text>
 		</view>
 </view>

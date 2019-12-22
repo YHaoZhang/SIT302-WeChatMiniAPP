@@ -1,39 +1,17 @@
-// pages/profile/profile.js
+// pages\search\searchResults\searchResults.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    data: [, , , , , ]
   },
-  manageActivities: function (e) {
+  moreClick: function (e) {
     var idx = parseInt(e.currentTarget.id);
     wx.navigateTo({
-      url: '../index/AdminSlider/AdminSlider' ,
+      url: 'searchDetails/searchDetails?str=' + idx,
     })
-  },
-  moreClick:function(e){
-    var idx = parseInt(e.currentTarget.id);
-    if(idx==0){
-      wx.navigateTo({
-        url: 'Notifications/Notifications',
-      })
-    }else if(idx==1){
-      wx.navigateTo({
-        url: 'Account/Account',
-      })
-    }else if(idx==2){
-      wx.navigateTo({
-        url: 'Help/Help',
-      })
-    }else if(idx==3){
-      wx.navigateTo({
-        url: 'progress/progress',
-      })
-    }else {
-    }
-
   },
   /**
    * 生命周期函数--监听页面加载

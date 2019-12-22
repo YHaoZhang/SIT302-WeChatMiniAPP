@@ -1,0 +1,13 @@
+<!--pages/search/search.wxml-->
+<image class='back_img' mode='aspectFill' src='../../img/bga.png'></image>
+<view class='content'>
+<view class="title">
+		  	<text>Search Your Dream Universities</text>
+		</view>
+		<view class='tetx_v'>
+			<input type="text" class="input-item" placeholder="Universities"></input>
+      <button form-type='submit' bindtap='searchSubmit' style='background: {{bbb}};' id='{{index}}'>Search</button>
+		</view>
+</view>
+
+

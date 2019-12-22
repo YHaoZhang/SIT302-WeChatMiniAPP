@@ -1,4 +1,4 @@
-/* pages/chat/chat.wxss */
+/* pages/search/search.wxss */
 .content_up{
   width: 100%;
   float: left;
@@ -70,4 +70,36 @@
   width: 20%;
   height: 50%;
   margin-top: 2.5vh
+}
+.content .title{
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-top: 80rpx;
+  float: left;
+}
+.content .tetx_v{
+  float: left;
+  width: 100%;
+  margin-top: 100rpx;
+}
+.content .tetx_v input{
+  float: left;
+  width: 90%;
+  padding: 0 5%;
+  margin-top: 40rpx;
+  border-radius: 40rpx;
+  height: 100rpx;
+  background: rgba(239, 239, 239, 0.4)
+}
+.content .tetx_v button{
+  float: left;
+  width: 100%;
+  margin-top: 40rpx;
+  height: 100rpx;
+  background-color: #5abd8c;
+  box-shadow: 0px 15px 20px 0px rgba(90, 189, 140, 0.55);
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
 }
