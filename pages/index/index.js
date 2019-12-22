@@ -18,6 +18,8 @@ Page({
       })
       return
     }
+    // 获取openid
+    this.onGetOpenid();
 
     // 获取用户信息
     wx.getSetting({
@@ -36,6 +38,9 @@ Page({
   },
   bindGetUserInfo (e) {
     console.log(e.detail.userInfo)
+    wx.switchTab({
+      url: '../home/home',
+    })
   },
 
   // onGetUserInfo: function (e) {
@@ -59,9 +64,9 @@ Page({
       success: res => {
         console.log('[云函数] [login] user info: ', res)
         app.globalData.openid = res.result.openid
-        wx.switchTab({
-          url: '../home/home',
-        })
+        // wx.switchTab({
+        //   url: '../home/home',
+        // })
       },
       fail: err => {
         console.error('[云函数] [login] 调用失败', err)
