@@ -1,5 +1,7 @@
 //index.js
 const app = getApp()
+wx.cloud.init({ env: 'acic-environment-efubl' });
+const db = wx.cloud.database();
 
 Page({
   data: {
@@ -31,6 +33,11 @@ Page({
             }
           })
         }
+      }
+    })
+    db.collection('students').doc("c086ceb4-c6f7-41f5-bbf0-0ef4cb9284b7").get({
+      success: res2 => {
+        app.globalData.student=res2.data;
       }
     })
   },
@@ -71,4 +78,6 @@ Page({
       }
     })
   },
+
+  
 })
