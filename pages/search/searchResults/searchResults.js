@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    data: [, , , , , ]
+    data: [, ]
   },
   moreClick: function (e) {
     var idx = parseInt(e.currentTarget.id);
