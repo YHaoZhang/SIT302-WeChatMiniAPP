@@ -30,7 +30,7 @@
       <view bindtap="moreClick" id='4'>
         <image mode='aspectFill' src='../../img/customer-service.png'></image>
         <text>Customer Service</text>
-        <button open-type='contact'>service</button>
+        <button open-type="contact">service</button>
 			</view>
       
 	</view> 
