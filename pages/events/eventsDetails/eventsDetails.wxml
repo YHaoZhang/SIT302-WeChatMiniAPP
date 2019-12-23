@@ -16,10 +16,17 @@
 				<text class='timer'>9:00am-10:00am,
 				Monday, 9 September</text>
 			</view>
+      <view class="box">
+				<text class='name'>Duration:</text>
+				<text class='timer'></text>
+			</view>
 			<view class="box">
 				<text class='name'>Location:</text>
-				<text class='timer'>Level 15, 190 Queen Street
-						Melbourne</text>
+				<text class='timer'>{{event.address}}</text>
+			</view>
+      <view class="box">
+				<text class='name'>Description:</text>
+				<text class='timer'>{{event.description}}</text>
 			</view>
 		</view>
 </view>

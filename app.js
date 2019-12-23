@@ -50,6 +50,8 @@ App({
   },
   globalData: {
     userInfo:{},
-    student:{}
+    student:{},
+    activities:[{}],
+    lectures:[{}]
   }
 })

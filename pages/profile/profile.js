@@ -1,3 +1,4 @@
+var app=getApp();
 // pages/profile/profile.js
 Page({
 
@@ -39,9 +40,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      student: getApp().globalData.student
+      student: app.globalData.student
     })
-    console.log(this.data.student)
   },
 
   /**

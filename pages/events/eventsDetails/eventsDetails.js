@@ -1,3 +1,4 @@
+var app = getApp();
 // pages/events/eventsDetails/eventsDetails.js
 Page({
 
@@ -5,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    event:{},
+    time: "",
+    duration: "",
   },
   moreClick: function (e) {
     var idx = parseInt(e.currentTarget.id);
@@ -17,7 +20,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // options.str
+    if(options.type == "0"){
+      this.setData({
+        event: app.globalData.activities[options.idx]
+      })
+    }else if(options.type == "1"){
+      this.setData({
+        event: app.globalData.lectures[options.idx]
+      })
+    }
+    console.log(this.data.event.start);
   },
 
   /**
