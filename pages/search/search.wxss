@@ -1,86 +1,12 @@
 /* pages/search/search.wxss */
-.content_up{
+.back_img{
   width: 100%;
-  float: left;
-  height: 90%;
-}
-.cell{
-  width: 100%;
-  float: left;
-  margin-top: 30rpx;
-}
-.cell image{
-  width: 40rpx;
-  height: 40rpx;
-  float: left;
-  margin-top: 20rpx;
-}
-.cell .neir{
-  width: 425rpx;
-  float: left;
-  background-color: #2699fb;
-  padding: 30rpx;
-    font-size: 28rpx;
-    line-height: 48rpx;
-    letter-spacing: 0px;
-    color: #ffffff;
-    border-radius: 10rpx;
-}
-.cell .jiao {
-    float: left;
-    margin-left: 35rpx;
-    margin-top: 20rpx;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid #2699fb;
-}
-.isyoub image{
-    float: right;
-}
-.isyoub .jiao2{
-    float: right;
-    margin-right: 35rpx;
-    margin-left: 0rpx;
-    margin-top: 20rpx;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid white;
-}
-.isyoub .neir{
-    float: right;
-    background: white;
-    color: #2699fb
-}
-.dibu{
-  position: absolute;
-  bottom: 0;
-  left: -5.5%;
-  width: 111.11%;
-  height: 10%;
-  border: 1px solid rgba(222, 222, 222, 0.4);
-}
-.dibu input{
-  float: left;
-  width: 70%;
-  height: 100%;
-  margin-left: 10%;
-}
-.dibu image{
-  float: left;
-  width: 20%;
-  height: 50%;
-  margin-top: 2.5vh
-}
-.content .title{
-  font-size: 40rpx;
-  font-weight: bold;
-  margin-top: 80rpx;
   float: left;
 }
 .content .tetx_v{
   float: left;
   width: 100%;
-  margin-top: 100rpx;
+  margin-top: 30rpx;
 }
 .content .tetx_v input{
   float: left;
@@ -95,11 +21,55 @@
   float: left;
   width: 100%;
   margin-top: 40rpx;
+  margin-bottom: 20px;
   height: 100rpx;
-  background-color: #5abd8c;
+  background-color: #9eee0a;
   box-shadow: 0px 15px 20px 0px rgba(90, 189, 140, 0.55);
   border-radius: 20px;
   text-align: center;
   cursor: pointer;
   color: white;
+}
+.content .cell{
+  width: 100%;
+  float: left;
+  margin-bottom: 60rpx;
+}
+.content .cell image{
+  width: 36%;
+  margin-right: 4%;
+  float: left;
+  
+}
+.content .cell .txt-box{
+  width: 60%;
+  float: left;
+}
+.content .cell .txt-box text{
+    font-size: 40rpx;
+    letter-spacing: 0px;
+    color: black;
+    font-weight: bold;
+    float: left;
+}
+.content .cell .txt-box .tit{
+    margin-top: 40rpx;
+}
+.content .cell .txt-box .info{
+    color: rgba(36, 33, 38, 0.5);
+    font-weight: normal;
+    font-size: 24rpx;
+    float: left;
+    padding: 30rpx 0;
+}
+.content .cell .txt-box .more{
+    display: block;
+    width: 50%;
+    background-image: linear-gradient(313deg, #5abd8c 0%, #00ff81 100%);
+    box-shadow: 0px 5px 15px 0px rgba(90, 189, 140, 0.5);
+    border-radius: 10px;
+    line-height: 2.5em;
+    font-size: 12px;
+    color: white;
+    text-align: center;
 }
