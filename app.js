@@ -1,4 +1,7 @@
 //app.js
+wx.cloud.init({
+  env:'acic-environment-efubl'
+})
 App({
   onLaunch: function () {
     

@@ -17,8 +17,7 @@
 
 
     "pages/search/search",
-    "pages/search/searchResults/searchResults",
-    "pages/search/searchResults/searchDetails/searchDetails",
+    "pages/search/searchDetails/searchDetails",
 
 
     "pages/profile/profile",

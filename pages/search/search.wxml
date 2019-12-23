@@ -1,13 +1,44 @@
 <!--pages/search/search.wxml-->
 <image class='back_img' mode='aspectFill' src='../../img/bga.png'></image>
-<view class='content'>
-<view class="title">
-		  	<text>Search Your Dream Universities</text>
-		</view>
-		<view class='tetx_v'>
-			<input type="text" class="input-item" placeholder="Universities"></input>
-      <button form-type='submit' bindtap='searchSubmit' style='background: {{bbb}};' id='{{index}}'>Search</button>
-		</view>
-</view>
+
+<scroll-view  scroll-y="true" class='content'>
+  <view class='tetx_v cell'>
+    <text>Search Your Dream Universities</text>
+    <input type='text' class='input-item' placeholder='Universities' value='{{searchValue}}' bindinput=''></input>
+    <button form-type='submit' bindtap='searchSubmit' data-keywords='' style='background: {{bbb}};' id='{{index}}'>Search</button>
+  </view>
+  <view class='cell'>
+      <image mode='widthFix' src='cloud://acic-environment-efubl.6163-acic-environment-efubl-1300760865/University_img/deakin.png'></image>
+      <view class="txt-box">
+        <text class="tit">Deakin University</text>
+        <text class="info">Top 1% of universities worldwide.</text>
+        <text class="more" bindtap="moreClick">Learn More</text>
+      </view>
+  </view>
+  <view class='cell'>
+      <image mode='widthFix' src='cloud://acic-environment-efubl.6163-acic-environment-efubl-1300760865/University_img/Melbourne.png'></image>
+      <view class="txt-box">
+        <text class="tit">The University of Melbourne</text>
+        <text class="info">Top 1% of universities worldwide.</text>
+        <text class="more" bindtap="moreClick">Learn More</text>
+      </view>
+  </view>
+  <view class='cell'>
+      <image mode='widthFix' src='cloud://acic-environment-efubl.6163-acic-environment-efubl-1300760865/University_img/monash.png'></image>
+      <view class="txt-box">
+        <text class="tit">Monash University</text>
+        <text class="info">Top 1% of universities worldwide.</text>
+        <text class="more" bindtap="moreClick">Learn More</text>
+      </view>
+  </view>
+  <view class='cell'>
+      <image mode='widthFix' src='cloud://acic-environment-efubl.6163-acic-environment-efubl-1300760865/University_img/ANU.png'></image>
+      <view class="txt-box">
+        <text class="tit">The Australian National University</text>
+        <text class="info">Top 1% of universities worldwide.</text>
+        <text class="more" bindtap="moreClick">Learn More</text>
+      </view>
+  </view>
+</scroll-view>
 
 
