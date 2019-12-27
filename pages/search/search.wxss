@@ -53,7 +53,7 @@
     float: left;
 }
 .content .cell .txt-box .tit{
-    margin-top: 40rpx;
+    margin-top: 30rpx;
 }
 .content .cell .txt-box .info{
     color: rgba(36, 33, 38, 0.5);
