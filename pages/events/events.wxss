@@ -61,6 +61,9 @@
 .content .cell .txt-box .tit{
     margin-top: 40rpx;
 }
+.tit{
+  width:100%;
+}
 .content .cell .txt-box .info{
     color: rgba(36, 33, 38, 0.5);
     font-weight: normal;

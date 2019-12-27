@@ -1,3 +1,6 @@
+wx.cloud.init({ env: 'acic-environment-efubl' });
+const db = wx.cloud.database();
+var app = getApp();
 // pages/events/events.js
 Page({
 
@@ -6,12 +9,13 @@ Page({
    */
   data: {
     currentTab: 0,
-    data: [,,,,]
+    activities:[{}],
+    lectures: [{}]
   },
   moreClick: function(e){
     var idx = parseInt(e.currentTarget.id);
     wx.navigateTo({
-      url: 'eventsDetails/eventsDetails?str=' + idx,
+      url: 'eventsDetails/eventsDetails?type=' + this.data.currentTab + "&idx=" + idx,
     })
   },
   //滑动切换
@@ -47,7 +51,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      activities: app.globalData.activities,
+      lectures:app.globalData.lectures
+    })
   },
 
   /**

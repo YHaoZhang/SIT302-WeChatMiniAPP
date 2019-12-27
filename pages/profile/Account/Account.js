@@ -6,7 +6,7 @@ Page({
    */
   data: {
     dataSorse: ["Photo", "Name", "ID","Date of birth"],
-    dataSorse2: ["", "John Doe", "219083709", "23 / 04 / 1999"]
+    dataSorse2: {photo:"", name:"", id:"", birthday:""}
   },
 
   /**

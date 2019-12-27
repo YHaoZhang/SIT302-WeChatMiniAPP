@@ -35,8 +35,22 @@ Page({
       }
     })
     db.collection('students').doc("c086ceb4-c6f7-41f5-bbf0-0ef4cb9284b7").get({
-      success: res2 => {
-        app.globalData.student=res2.data;
+      success: res => {
+        app.globalData.student=res.data;
+      }
+    })
+    db.collection("events").where({
+      type: "lecture"
+    }).get({
+      success: res => {
+        app.globalData.lectures=res.data;
+      }
+    })
+    db.collection("events").where({
+      type: "activity"
+    }).get({
+      success: res => {
+        app.globalData.activities=res.data;
       }
     })
   },

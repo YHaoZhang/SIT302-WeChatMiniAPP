@@ -9,11 +9,12 @@
 <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab" class="test">
     <swiper-item class='swiper-item'>
       <scroll-view  scroll-y="true" class='content'>
-    <view class='cell' wx:for="{{data}}" wx:key="index">
+    <view class='cell' wx:for="{{activities}}" wx:key="index">
         <image mode='widthFix' src='../../img/dekin.png'></image>
 				<view class="txt-box">
-					<text class="tit">Deakin University Preaching</text>
-					<text class="info">Deakin University Presentation.</text>
+					<text class="tit">{{item.title}}</text>
+          <text class="tit"></text>
+          <text class="tit"></text>
 					<text class="more" bindtap="moreClick" id='{{index}}'>Learn More</text>
 				</view>
     </view>
@@ -22,11 +23,12 @@
     
     <swiper-item>
       <scroll-view  scroll-y="true" class='content'>
-    <view class='cell' wx:for="{{data}}" wx:key="index">
+    <view class='cell' wx:for="{{lectures}}" wx:key="index">
         <image mode='widthFix' src='../../img/dekin.png'></image>
 				<view class="txt-box">
-					<text class="tit">Southwest University Preaching</text>
-					<text class="info">Southwest University Presentation.</text>
+					<text class="tit">{{item.title}}</text>
+          <text class="tit"></text>
+          <text class="tit"></text>
 					<text class="more" bindtap="moreClick" id='{{index}}'>Learn More</text>
 				</view>
     </view>
