@@ -5,13 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    content: []
+  }, 
+  showLoading: function () {
+    wx.showToast({
+      title: 'Loading',
+      mask: true,
+      icon: 'loading'
+    });
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     // options.str
+    let list = JSON.parse(options.array)
+    this.setData({
+      content: list
+    })
+    this.showLoading()
   },
 
   /**

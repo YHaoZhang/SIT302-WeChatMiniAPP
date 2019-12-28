@@ -16,7 +16,6 @@ Page({
     })
   },
   searchSubmit: function () {
-    console.log(this.data.input)
     //Search in the database
     let that = this
     if (that.data.input!='')
@@ -35,7 +34,6 @@ Page({
         })
       }).get({
         success: res => {
-          console.log(res)
           that.setData({
             searchList: res.data
           })
@@ -46,12 +44,13 @@ Page({
       })
       //this.cancelLoading()
     }
-    //hide the loading
-
-    // var idx = parseInt(e.currentTarget.id);
-    // wx.navigateTo({
-    //   url: 'searchResults/searchResults?str=' + idx,
-    // })
+  },
+  //Learn more function
+  moreClick: function (e) {
+    let array = JSON.stringify(this.data.searchList[e.currentTarget.id])
+    wx.navigateTo({
+      url: 'searchDetails/searchDetails?array=' + array,
+    })
   },
   //Loading function
   showLoading: function () {

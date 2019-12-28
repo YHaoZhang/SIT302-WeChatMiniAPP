@@ -13,7 +13,7 @@
       <view class="txt-box">
         <text class='tit'>{{item.name}}</text>
         <text class='info'>{{item.brief}}</text>
-        <text class='more' bindtap='moreClick'>Learn More</text>
+        <text class='more' id='{{index}}' bindtap='moreClick'>Learn More</text>
       </view>
     </view>
   </block>
