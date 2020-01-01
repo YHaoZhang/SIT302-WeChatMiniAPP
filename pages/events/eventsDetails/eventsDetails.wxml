@@ -2,7 +2,7 @@
 <image class='back_img' mode='aspectFill' src='../../../img/bga.png'></image>
 <view  class='content'>
     <view class='cell'>
-        <image mode='widthFix' src='../../../img/dekin.png'></image>
+        <image mode='widthFix' src='{{event.poster}}'></image>
 				<view class="txt-box">
 					<text class="tit">Deakin University Preaching</text>
 					<!-- <text class="info">Deakin University Presentation.</text> -->
@@ -12,13 +12,13 @@
 
     <view class="detail-txt">
 			<view class="box">
-				<text class='name'>Time:</text>
-				<text class='timer'>9:00am-10:00am,
-				Monday, 9 September</text>
+				<text class='name'>Start Time:</text>
+				<text class='timer'>{{event.startDate}}</text>
+        <text class='timer'>{{event.startTime}}</text>
 			</view>
       <view class="box">
 				<text class='name'>Duration:</text>
-				<text class='timer'></text>
+				<text class='timer'>{{duration}}</text>
 			</view>
 			<view class="box">
 				<text class='name'>Location:</text>

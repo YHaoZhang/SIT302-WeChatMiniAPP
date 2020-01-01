@@ -7,7 +7,6 @@ Page({
    */
   data: {
     event:{},
-    time: "",
     duration: "",
   },
   moreClick: function (e) {
@@ -29,7 +28,12 @@ Page({
         event: app.globalData.lectures[options.idx]
       })
     }
-    console.log(this.data.event.start);
+    var h = this.data.event.duration / 60;
+    var m = this.data.event.duration % 60;
+    var d = h + "H " + m + " M ";
+    this.setData({
+      duration: d 
+    })
   },
 
   /**

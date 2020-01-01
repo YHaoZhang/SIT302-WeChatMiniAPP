@@ -2,15 +2,40 @@
 
 <view class='content'>
     <text class='h2'>Publish an event</text>
-    <input type="text" placeholder="event nane" disabled='{{isDisabled}}'> </input>
-    <input type="text" placeholder="event time" disabled='{{isDisabled}}'></input>
-    <input type="text" placeholder="event location" disabled='{{isDisabled}}'></input>
+    Title:
+    <input type="text" placeholder="title" bindinput="bindTitleInput"></input>
+    Address:
+    <input type="text" placeholder="address" bindinput="bindAddressInput"></input>
+    Brief:
+    <input type="text" placeholder="brief" bindinput="bindBriefInput"></input>
+    Description:
+    <input type="text" placeholder="description" bindinput="bindDescriptionInput"></input>
+    Start Date
+    <picker mode="date" value="{{date}}" start="2010-09-01" end="2030-09-01" bindchange="bindDatePicker">
+      <view class="picker">
+        Current date: {{date}}
+      </view>
+    </picker>
+    Start Time
+    <picker mode="time" value="{{time}}" start="09:00" end="22:00" bindchange="bindTimePicker">
+      <view class="picker">
+        Current time: {{time}}
+      </view>
+    </picker>
+    Duration:
+    <input type="text" placeholder="Hours" bindinput="bindDHInput"></input>
+    <input type="text" placeholder="Minutes" bindinput="bindDMInput"></input>
+    Type
+    <picker mode="selector" value="{{index}}" range="{{type}}" bindchange="bindTypePicker">
+      <view class="picker">
+        Current type: {{type[index]}}
+      </view>
+    </picker>
 
     <button class='but1' form-type='file' bindtap='poster' >Choose a poster</button>
     <view class='image_v'>
         <text wx:if="{{carWin_img_hidden == true}}">预览</text>
-        <image wx:if="{{carWin_img_hidden == false}}" mode='aspectFit' src='{{carWin_img}}'></image>
-        
+        <image wx:if="{{carWin_img_hidden == false}}" mode='aspectFit' src='{{carWin_img}}'></image>    
     </view>
     <button form-type='submit' bindtap='publish' >Publish</button>
 </view>

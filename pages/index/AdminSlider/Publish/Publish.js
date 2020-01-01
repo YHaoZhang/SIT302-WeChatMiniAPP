@@ -1,13 +1,25 @@
 // pages/index/AdminSlider/Publish/Publish.js
+wx.cloud.init({ env: 'acic-environment-efubl' });
+const db = wx.cloud.database();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isDisabled: false,
     carWin_img_hidden: true, 
-    carWin_img: "" 
+    carWin_img: "" ,
+    title:"",
+    address:"",
+    brief:"",
+    description:"",
+    dH:0,
+    dM:0,
+    duration:0,
+    time:"12:00",
+    date:"2019-12-30",
+    type: ['lecture', 'activity'],
+    index:0
   },
   poster:function(){
     var that= this;
@@ -30,17 +42,79 @@ Page({
     })
   },
   publish:function(){
-    wx.showToast({
-      title: 'successful',
-      icon: 'success',
-      duration: 1000
-    });
-    var that = this;
-
-    that.setData({
-      isDisabled: true, 
-    });
+    var d = parseInt(this.data.dH) * 60 + parseInt(this.data.dM);
+    this.setData({
+      duration: d,
+    })
+    console.log(this.data.duration);
+    console.log(this.data.startTime)
+    db.collection('events').add({
+      data:{
+        title:this.data.title,
+        address:this.data.address,
+        brief:this.data.brief,
+        description:this.data.description,
+        duration: this.data.duration,
+        startDate:this.data.date,
+        startTime:this.data.time,
+        type:this.data.type[this.data.index]
+      },
+      success:function(res){
+        wx.showToast({
+          title: 'successful',
+          icon: 'success',
+          duration: 1000
+        });
+      }
+    })
+    
   },
+  bindTitleInput: function(e){
+    this.setData({
+      title:e.detail.value
+    })
+  },
+  bindAddressInput: function (e) {
+    this.setData({
+      address: e.detail.value
+    })
+  },
+  bindBriefInput: function (e) {
+    this.setData({
+      brief: e.detail.value
+    })
+  },
+  bindDescriptionInput: function (e) {
+    this.setData({
+      description: e.detail.value
+    })
+  },
+  bindTimePicker: function(e){
+    this.setData({
+      time:e.detail.value
+    })
+  },
+  bindDatePicker: function (e) {
+    this.setData({
+      date: e.detail.value
+    })
+  },
+  bindTypePicker: function(e){
+    this.setData({
+      index: e.detail.value
+    })
+  },
+  bindDHInput: function (e) {
+    this.setData({
+      dH: e.detail.value
+    })
+  },
+  bindDMInput: function (e) {
+    this.setData({
+      dM: e.detail.value
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */

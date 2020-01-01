@@ -11,11 +11,24 @@ input{
     background-color: rgba(239, 239, 239, 0.7);
     border-radius: 40rpx;
     margin-top: 32rpx;
+    margin-bottom: 32rpx;
     width: 90%;
-    float: left;
     height: 112rpx;
     font-size: 30rpx;
     padding:0 5%;
+}
+
+.picker{
+    background-color: rgba(239, 239, 239, 0.7);
+    border-radius: 40rpx;
+    margin-top: 32rpx;
+    margin-bottom: 32rpx;
+    width: 90%;
+    height: 112rpx;
+    font-size: 30rpx;
+    padding:0 5%;
+    display: flex;
+    align-items: center;
 }
 
 button{
@@ -23,7 +36,6 @@ button{
     border-radius: 40rpx;
     margin-top: 50rpx;
     width: 100%;
-    float: left;
     height: 112rpx;
     font-size: 30rpx;
     line-height: 112rpx;

@@ -10,10 +10,10 @@
     <swiper-item class='swiper-item'>
       <scroll-view  scroll-y="true" class='content'>
     <view class='cell' wx:for="{{activities}}" wx:key="index">
-        <image mode='widthFix' src='../../img/dekin.png'></image>
+        <image mode='widthFix' src='{{item.poster}}'></image>
 				<view class="txt-box">
 					<text class="tit">{{item.title}}</text>
-          <text class="tit"></text>
+          <text class="info">{{item.brief}}</text>
           <text class="tit"></text>
 					<text class="more" bindtap="moreClick" id='{{index}}'>Learn More</text>
 				</view>
@@ -24,10 +24,10 @@
     <swiper-item>
       <scroll-view  scroll-y="true" class='content'>
     <view class='cell' wx:for="{{lectures}}" wx:key="index">
-        <image mode='widthFix' src='../../img/dekin.png'></image>
+        <image mode='widthFix' src='{{item.poster}}'></image>
 				<view class="txt-box">
 					<text class="tit">{{item.title}}</text>
-          <text class="tit"></text>
+          <text class="info">{{item.brief}}</text>
           <text class="tit"></text>
 					<text class="more" bindtap="moreClick" id='{{index}}'>Learn More</text>
 				</view>
