@@ -21,8 +21,9 @@ Page({
         url: 'Notifications/Notifications',
       })
     }else if(idx==1){
+      let array = JSON.stringify(this.data.student)
       wx.navigateTo({
-        url: 'Account/Account',
+        url: 'Account/Account?array=' + array,
       })
     }else if(idx==2){
       wx.navigateTo({
@@ -39,9 +40,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      student: app.globalData.student
-    })
   },
 
   /**
@@ -55,6 +53,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.setData({
+      student: app.globalData.student
+    })
   },
 
   /**

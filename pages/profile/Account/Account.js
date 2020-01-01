@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    student: {},
+    student: [],
     firstName: "",
     lastName: "",
     gender: 0,
@@ -24,8 +24,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let list = JSON.parse(options.array)
     this.setData({
-      student: app.globalData.student
+      student: list
     })
   },
   dataSetting: function (){
@@ -59,6 +60,9 @@ Page({
         }).get({
           success: res => {
             app.globalData.student = res.data;
+            // let pages = getCurrentPages(); //页面栈
+            // let beforePage = pages[pages.length - 2];//上一级页面
+            // beforePage.onLoad()
           }
         })
         wx.showToast({
@@ -66,6 +70,9 @@ Page({
           icon: 'success',
           duration: 1000
         });
+        // wx.switchTab({
+        //   url: '../profile',
+        // })
       },
       fail: err => {
         icon: 'none',
@@ -121,8 +128,6 @@ Page({
    */
   onShow: function () {
     this.dataSetting()
-
-    console.log(this.data.student)
   },
 
   /**
