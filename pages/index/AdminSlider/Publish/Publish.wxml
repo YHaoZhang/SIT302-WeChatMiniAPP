@@ -28,7 +28,7 @@
     Type
     <picker mode="selector" value="{{index}}" range="{{type}}" bindchange="bindTypePicker">
       <view class="picker">
-        Current type: {{type[index]}}
+        Event type: {{type[index]}}
       </view>
     </picker>
 
