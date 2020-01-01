@@ -34,7 +34,7 @@
 
     <button class='but1' form-type='file' bindtap='poster' >Choose a poster</button>
     <view class='image_v'>
-        <text wx:if="{{carWin_img_hidden == true}}">预览</text>
+        <text wx:if="{{carWin_img_hidden == true}}">Preview</text>
         <image wx:if="{{carWin_img_hidden == false}}" mode='aspectFit' src='{{carWin_img}}'></image>    
     </view>
     <button form-type='submit' bindtap='publish' >Publish</button>

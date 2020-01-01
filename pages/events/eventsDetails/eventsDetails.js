@@ -28,7 +28,7 @@ Page({
         event: app.globalData.lectures[options.idx]
       })
     }
-    var h = this.data.event.duration / 60;
+    var h = parseInt(this.data.event.duration / 60);
     var m = this.data.event.duration % 60;
     var d = h + "H " + m + " M ";
     this.setData({

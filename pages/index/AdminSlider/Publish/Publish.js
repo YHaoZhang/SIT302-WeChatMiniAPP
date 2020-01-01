@@ -1,4 +1,5 @@
 // pages/index/AdminSlider/Publish/Publish.js
+const app = getApp()
 wx.cloud.init({ env: 'acic-environment-efubl' });
 const db = wx.cloud.database();
 Page({
@@ -9,6 +10,7 @@ Page({
   data: {
     carWin_img_hidden: true, 
     carWin_img: "" ,
+    imgType:"",
     title:"",
     address:"",
     brief:"",
@@ -19,7 +21,8 @@ Page({
     time:"12:00",
     date:"2019-12-30",
     type: ['lecture', 'activity'],
-    index:0
+    index:0,
+    poster:""
   },
   poster:function(){
     var that= this;
@@ -33,40 +36,85 @@ Page({
         // 无论用户是从相册选择还是直接用相机拍摄，路径都是在这里面
         var filePath = res.tempFilePaths[0];
         //将刚才选的照片/拍的 放到下面view视图中
+        
         that.setData({
           carWin_img: filePath, //把照片路径存到变量中，
           carWin_img_hidden: false, //让展示照片的view显示
+          imgName: that.data.carWin_img.substring(that.data.carWin_img.lastIndexOf('.'),that.data.carWin_img.length)
         });
+        var imgtype = that.data.carWin_img.substring(that.data.carWin_img.lastIndexOf('.'), that.data.carWin_img.length);
+        that.setData({
+          imgType: imgtype,
+        })
+        
       }
-      
     })
+   
+    
   },
   publish:function(){
+    wx.showLoading({
+      title: 'Publishing...',
+    })
+    let timestamp = (new Date()).valueOf();
     var d = parseInt(this.data.dH) * 60 + parseInt(this.data.dM);
     this.setData({
       duration: d,
     })
-    console.log(this.data.duration);
-    console.log(this.data.startTime)
-    db.collection('events').add({
-      data:{
-        title:this.data.title,
-        address:this.data.address,
-        brief:this.data.brief,
-        description:this.data.description,
-        duration: this.data.duration,
-        startDate:this.data.date,
-        startTime:this.data.time,
-        type:this.data.type[this.data.index]
+    wx.cloud.uploadFile({
+      cloudPath: "poster/" + timestamp + this.data.imgType,
+      filePath: this.data.carWin_img,
+      success: res => {
+        this.setData({
+          poster: res.fileID.toString()
+        })
+        db.collection('events').add({
+          data: {
+            title: this.data.title,
+            address: this.data.address,
+            brief: this.data.brief,
+            description: this.data.description,
+            duration: this.data.duration,
+            startDate: this.data.date,
+            startTime: this.data.time,
+            type: this.data.type[this.data.index],
+            poster: this.data.poster
+          },
+          success: function (res) {
+            wx.hideLoading();
+            db.collection("events").where({
+              type: "lecture"
+            }).get({
+              success: res => {
+                app.globalData.lectures = res.data;
+              }
+            })
+            db.collection("events").where({
+              type: "activity"
+            }).get({
+              success: res => {
+                app.globalData.activities = res.data;
+              }
+            })
+            wx.showToast({
+              title: 'successful',
+              icon: 'success',
+              duration: 2000
+            });
+            wx.switchTab({
+              url: '../../../profile/profile',
+            })
+          }
+        })
       },
-      success:function(res){
-        wx.showToast({
-          title: 'successful',
-          icon: 'success',
-          duration: 1000
-        });
+      fail: err => {
+        wx.hideLoading();
+        wx.switchTab({
+          url: '../../../profile/profile',
+        })
       }
     })
+    
     
   },
   bindTitleInput: function(e){
