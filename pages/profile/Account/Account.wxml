@@ -1,15 +1,25 @@
-<!--pages/profile/Account/Account.wxml-->
+<!-- pages/profile/Account/Account.wxml -->
 <image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
 
 <view class='content'>
-  <block>
-    <view class='tetx_v cell' wx:for='{{dataSorse}}' wx:key='index'>
-			<text>{{item}}</text>
-      <input type='text' wx:if='{{index==1}}' class='input-item' placeholder='{{dataSorse2[1]}}'></input>
-      <input type='text' wx:if='{{index!=1}}' class='input-item' placeholder='{{dataSorse2[index]}}' bindinput='accountInput'></input>
-    </view>
-    <view class='tetx_v cell'>
-      <button form-type='submit' bindtap='searchSubmit' style='background: {{bbb}};'>Save</button>
-    </view>
-  </block>
+    <text class='h2'>Information Alter</text>
+    First Name:
+    <input type='text' placeholder='{{firstName}}' bindinput='bindFirstNameInput'></input>
+    Last Name:
+    <input type='text' placeholder='{{lastName}}' bindinput='bindLastNameInput'></input>
+    Gender:
+    <picker mode='selector' value='{{gender}}' range='{{type}}' bindchange="bindGenderPicker">
+      <view class='picker'>{{type[gender]}}</view>
+    </picker>
+    Date of birthday:
+    <picker mode='date' value='{{birthday}}' bindchange='bindDatePicker'>
+      <view class='picker'>{{birthday}}</view>
+    </picker>
+    Phone in Australia:
+    <input type='text' placeholder='{{phone_au}}' bindinput='bindPhoneAUInput'></input>
+    Phone in China:
+    <input type='text' placeholder='{{phone_ch}}' bindinput='bindPhoneCHInput'></input>
+    E-Mail:
+    <input type='text' placeholder='{{email}}' bindinput='bindEmailInput'></input>
+    <button form-type='submit' bindtap='save' >Save</button>
 </view>
