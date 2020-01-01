@@ -3,7 +3,7 @@
 <view class='content'>
     <view class='cell' wx:for="{{dataSorse}}" wx:key="index">
 			  <text>{{item}}</text>
-        <image wx:if="{{index == 0}}" class='back_img' mode='aspectFill' src='/img/Profile.png'></image>
+       
         <text class='text2' wx:if="{{index!= 0}}">{{dataSorse2[index]}} </text>
     </view>
 </view> 
