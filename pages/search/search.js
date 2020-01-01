@@ -15,6 +15,7 @@ Page({
       input: e.detail.value
     })
   },
+
   searchSubmit: function () {
     //Search in the database
     let that = this
@@ -44,6 +45,9 @@ Page({
       })
       //this.cancelLoading()
     }
+    this.setData({
+      input:''
+    })
   },
   //Learn more function
   moreClick: function (e) {

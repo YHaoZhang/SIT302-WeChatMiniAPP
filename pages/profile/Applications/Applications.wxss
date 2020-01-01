@@ -1,0 +1,43 @@
+/* pages/profile/Applications/Applications.wxss */
+.back_img{
+  width: 100%;
+  float: left;
+}
+
+.content .cell{
+  width: 100%;
+  float: left;
+  margin-bottom: 60rpx;
+}
+.content .cell .txt-box{
+  width: 100%;
+  float: left;
+}
+.content .cell .txt-box text{
+    margin-top: 40rpx;
+    font-size: 30rpx;
+    letter-spacing: 0px;
+    color: black;
+    
+    float: left;
+}
+.content .cell .txt-box .tit{
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.content .cell .txt-box .school{
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.content .cell .txt-box .more{
+    display: block;
+    width: 60%;
+    background-image: linear-gradient(313deg, #5abd8c 0%, #00ff81 100%);
+    box-shadow: 0px 5px 15px 0px rgba(90, 189, 140, 0.5);
+    border-radius: 10px;
+    line-height: 2.5em;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    margin-top: 40rpx;
+}

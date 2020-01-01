@@ -1,47 +1,30 @@
-var app=getApp();
-// pages/profile/profile.js
+// pages/profile/Applications/Applications.js
+wx.cloud.init({ env: 'acic-environment-efubl' });
+const db = wx.cloud.database();
+var app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    student: {}
+    appList: [{}],
   },
-  manageActivities: function (e) {
+
+  moreClick: function (e) {
     var idx = parseInt(e.currentTarget.id);
     wx.navigateTo({
-      url: '../index/AdminSlider/AdminSlider' ,
+      url: 'ApplicationDetails/ApplicationDetails?idx=' + idx,
     })
   },
-  moreClick:function(e){
-    var idx = parseInt(e.currentTarget.id);
-    if(idx==0){
-      wx.navigateTo({
-        url: 'Notifications/Notifications',
-      })
-    }else if(idx==1){
-      wx.navigateTo({
-        url: 'Account/Account',
-      })
-    }else if(idx==2){
-      wx.navigateTo({
-        url: 'Help/Help',
-      })
-    }else if(idx==3){
-      wx.navigateTo({
-        url: 'Applications/Applications',
-      })
-    }else {
-    }
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.setData({
-      student: app.globalData.student
-    })
+      appList: app.globalData.applications
+    });
+    
   },
 
   /**

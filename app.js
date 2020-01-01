@@ -55,6 +55,7 @@ App({
     userInfo:{},
     student:{},
     activities:[{}],
-    lectures:[{}]
+    lectures:[{}],
+    applications:[{}]
   }
 })

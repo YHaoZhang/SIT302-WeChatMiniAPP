@@ -1,10 +1,10 @@
 <!--pages/index/index.wxml-->
 <image class='back_imge' src="/img/bg.png" mode='aspectFill'></image>
-<view class='content'>
+<!-- <view class='content'>
     <view class="userinfo-nickname-wrapper">
       <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击获取 userInfo</button>
     </view>
-</view>
+</view> -->
 
 
 
