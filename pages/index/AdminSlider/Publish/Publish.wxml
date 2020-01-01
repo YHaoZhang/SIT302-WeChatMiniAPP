@@ -13,13 +13,13 @@
     Start Date
     <picker mode="date" value="{{date}}" start="2010-09-01" end="2030-09-01" bindchange="bindDatePicker">
       <view class="picker">
-        Current date: {{date}}
+        {{date}}
       </view>
     </picker>
     Start Time
     <picker mode="time" value="{{time}}" start="09:00" end="22:00" bindchange="bindTimePicker">
       <view class="picker">
-        Current time: {{time}}
+        {{time}}
       </view>
     </picker>
     Duration:
@@ -28,13 +28,13 @@
     Type
     <picker mode="selector" value="{{index}}" range="{{type}}" bindchange="bindTypePicker">
       <view class="picker">
-        Current type: {{type[index]}}
+        Event type: {{type[index]}}
       </view>
     </picker>
 
     <button class='but1' form-type='file' bindtap='poster' >Choose a poster</button>
     <view class='image_v'>
-        <text wx:if="{{carWin_img_hidden == true}}">预览</text>
+        <text wx:if="{{carWin_img_hidden == true}}">Preview</text>
         <image wx:if="{{carWin_img_hidden == false}}" mode='aspectFit' src='{{carWin_img}}'></image>    
     </view>
     <button form-type='submit' bindtap='publish' >Publish</button>

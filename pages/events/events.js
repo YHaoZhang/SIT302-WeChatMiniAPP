@@ -51,10 +51,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      activities: app.globalData.activities,
-      lectures:app.globalData.lectures
-    })
+    
   },
 
   /**
@@ -68,7 +65,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      activities: app.globalData.activities,
+      lectures: app.globalData.lectures
+    })
   },
 
   /**

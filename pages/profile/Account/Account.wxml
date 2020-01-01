@@ -22,4 +22,4 @@
     E-Mail:
     <input type='text' placeholder='{{email}}' bindinput='bindEmailInput'></input>
     <button form-type='submit' bindtap='save' >Save</button>
-</view>
+</view> 

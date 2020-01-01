@@ -41,7 +41,6 @@ Page({
     })
   },
   save: function () {
-    console.log(this.data.gender)
     db.collection('students').doc(this.data.id).update({
       data: {
         firstname: this.data.firstName,
@@ -53,6 +52,13 @@ Page({
         email_address: this.data.email
       },
       success: res => {
+        db.collection('students').where({
+          _id: this.data.id
+        }).get({
+          success: res => {
+            app.globalData.activities = res.data;
+          }
+        })
         wx.showToast({
           title: 'successful',
           icon: 'success',
