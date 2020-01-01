@@ -28,7 +28,7 @@ Page({
       student: app.globalData.student
     })
   },
-  dataSetting:function (){
+  dataSetting: function (){
     this.setData({
       gender: this.data.student.gender,
       firstName: this.data.student.firstname,
@@ -41,8 +41,10 @@ Page({
     })
   },
   save: function () {
-    db.collection('students').doc(this.data.id).update({
+    wx.cloud.callFunction({
+      name: 'update_students',
       data: {
+        id: this.data.id,
         firstname: this.data.firstName,
         lastname: this.data.lastName,
         gender: this.data.gender,
@@ -56,7 +58,7 @@ Page({
           _id: this.data.id
         }).get({
           success: res => {
-            app.globalData.activities = res.data;
+            app.globalData.student = res.data;
           }
         })
         wx.showToast({
@@ -119,6 +121,8 @@ Page({
    */
   onShow: function () {
     this.dataSetting()
+
+    console.log(this.data.student)
   },
 
   /**
