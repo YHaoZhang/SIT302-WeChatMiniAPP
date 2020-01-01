@@ -13,13 +13,13 @@
     Start Date
     <picker mode="date" value="{{date}}" start="2010-09-01" end="2030-09-01" bindchange="bindDatePicker">
       <view class="picker">
-        Current date: {{date}}
+        {{date}}
       </view>
     </picker>
     Start Time
     <picker mode="time" value="{{time}}" start="09:00" end="22:00" bindchange="bindTimePicker">
       <view class="picker">
-        Current time: {{time}}
+        {{time}}
       </view>
     </picker>
     Duration:
