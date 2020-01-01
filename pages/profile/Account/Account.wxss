@@ -1,34 +1,51 @@
-/* pages/profile/Account/Account.wxss */
-
-.cell{
-    display: block;
-    width: 90%;
-    margin-left: 5%;
-    background-color: #ffffff;
-    border-radius: 10rpx;
-    border: solid 4rpx #afdfc7;
-    float: left;
-    height: 160rpx;
-    margin-top: 50rpx;
-}
-
-.cell text{
-  height: 100%;
-  line-height: 160rpx;
+/* pages/search/search.wxss */
+.back_img{
+  width: 100%;
   float: left;
-  margin-left: 30rpx;
-  font-size: 24rpx;
+}
+.content .tetx_v{
+  float: left;
+  width: 100%;
+  margin-top: 30rpx;
+}
+.content .tetx_v input{
+  float: left;
+  width: 50%;
+  padding: 0 5%;
+  margin-top: 40rpx;
+  border-radius: 40rpx;
+  height: 100rpx;
+  background: rgba(239, 239, 239, 0.4)
+}
+.content .tetx_v button{
+  float: left;
+  width: 100%;
+  margin-top: 40rpx;
+  margin-bottom: 20px;
+  height: 100rpx;
+  background-color: #9eee0a;
+  box-shadow: 0px 15px 20px 0px rgba(90, 189, 140, 0.55);
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+}
+.content .cell{
+  width: 100%;
+  float: left;
+  margin-bottom: 60rpx;
+  display: flex;
+  
+  align-items: right;
+	justify-content: center;
+}
+.content .cell text{
+  margin-top: 28px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 34rpx;
+  letter-spacing: 0px;
+  color: black;
   font-weight: bold;
-  color: #2699fb;
-}
-.cell .text2{
-  float: right;
-  margin-right: 30rpx;
-}
-.cell image{
-  float: right;
-  margin-right: 30rpx;
-  width: 110rpx;
-  height: 110rpx;
-  margin-top: 20rpx;
+  float: left;
 }

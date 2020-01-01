@@ -5,8 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataSorse: ["Photo", "Name", "ID","Date of birth"],
-    dataSorse2: {photo:"", name:"", id:"", birthday:""}
+    dataSorse: ["Name", "ID","Date of birth"],
+    dataSorse2: {name:"", id:"321321", birthday:""}
   },
 
   /**
