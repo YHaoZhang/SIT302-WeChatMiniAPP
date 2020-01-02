@@ -1,0 +1,12 @@
+<!--pages/profile/Applications/Applications.wxml-->
+<image class='back_img' mode='aspectFill' src='../../../img/bga.png'></image>
+<scroll-view  scroll-y="true" class='content'>
+    <view class='cell' wx:for="{{appList}}" wx:key="index">
+				<view class="txt-box">
+					<text class="tit">Application {{index+1}} \n </text>
+					<text class="school">{{item.school_name}} \n </text>
+					<text class="course">{{item.course}} \n </text>
+					<text class='more' id='{{index}}' bindtap='moreClick'>Learn More</text>
+				</view>
+    </view>
+</scroll-view>

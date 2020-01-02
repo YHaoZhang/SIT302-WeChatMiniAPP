@@ -1,0 +1,23 @@
+<!--pages/profile/Applications/ApplicationDetails/ApplicationDetails.wxml-->
+
+<block wx:for="{{list}}" wx:if="{{index <= thisApplication.current_status}}">
+    <view class='order'>
+
+      <view wx:if="{{index==thisApplication.current_status}}" class='icon in'></view>
+      <view wx:if="{{index!=thisApplication.current_status}}" class='icon no_in'></view>
+
+      <view class='list_content'>
+        <view class='status'>【{{item.status}}】</view>
+        <view class='detail'> {{item.detail}}</view>
+      </view>
+      <view class='list_content' wx:if="{{index==thisApplication.current_status}}" class='list_content current'>
+        <view>【{{item.status}}】</view>
+        <view> {{item.detail}}</view>
+      </view>
+
+      <view class='on'>
+      </view>
+
+    </view>
+  </block>
+<view wx:if="{{index!=0}}" class='icon no_in'></view>

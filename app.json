@@ -24,7 +24,8 @@
     "pages/profile/Notifications/Notifications",
     "pages/profile/Account/Account",
     "pages/profile/Help/Help",
-    "pages/profile/progress/progress"
+    "pages/profile/Applications/Applications",
+    "pages/profile/Applications/ApplicationDetails/ApplicationDetails"
     
     
     
