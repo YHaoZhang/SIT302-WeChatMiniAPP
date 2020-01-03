@@ -121,7 +121,6 @@ Page({
     this.setData({
       student: app.globalData.student
     })
-    console.log(this.data.student)
     this.dataSetting(this.data.student)
   },
 
