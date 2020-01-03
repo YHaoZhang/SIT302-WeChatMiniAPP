@@ -4,7 +4,7 @@
 <view class='content'>
     <text class='h2'>Information Alter</text>
     First Name:
-    <input type='text' placeholder='{{firstName}}' bindinput='bindFirstNameInput'></input>
+    <input type='text' placeholder='{{student.firstname}}' bindinput='bindFirstNameInput'></input>
     Last Name:
     <input type='text' placeholder='{{lastName}}' bindinput='bindLastNameInput'></input>
     Gender:

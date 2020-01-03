@@ -1,5 +1,5 @@
 // pages/profile/Account/Account.js
-var app = getApp();
+let app = getApp();
 wx.cloud.init({ env: 'acic-environment-efubl' });
 const db = wx.cloud.database();
 Page({
@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    student: [],
+    student: {},
     firstName: "",
     lastName: "",
     gender: 0,
@@ -24,21 +24,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let list = JSON.parse(options.array)
-    this.setData({
-      student: list
-    })
   },
-  dataSetting: function (){
+  dataSetting: function (e){
     this.setData({
-      gender: this.data.student.gender,
-      firstName: this.data.student.firstname,
-      lastName: this.data.student.lastname,
-      birthday: this.data.student.birthday,
-      phone_au: this.data.student.phone_in_aus,
-      phone_ch: this.data.student.phone_in_china,
-      email: this.data.student.email_address,
-      id: this.data.student._id
+      gender: e.gender,
+      firstName: e.firstname,
+      lastName: e.lastname,
+      birthday: e.birthday,
+      phone_au: e.phone_in_aus,
+      phone_ch: e.phone_in_china,
+      email: e.email_address,
+      id: e._id
     })
   },
   save: function () {
@@ -55,14 +51,9 @@ Page({
         email_address: this.data.email
       },
       success: res => {
-        db.collection('students').where({
-          _id: this.data.id
-        }).get({
+        db.collection('students').doc(this.data.id).get({
           success: res => {
-            app.globalData.student = res.data;
-            // let pages = getCurrentPages(); //页面栈
-            // let beforePage = pages[pages.length - 2];//上一级页面
-            // beforePage.onLoad()
+            app.globalData.student = res.data
           }
         })
         wx.showToast({
@@ -127,7 +118,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.dataSetting()
+    this.setData({
+      student: app.globalData.student
+    })
+    console.log(this.data.student)
+    this.dataSetting(this.data.student)
   },
 
   /**
@@ -141,7 +136,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    // let pages = getCurrentPages(); //页面栈
+    // let beforePage = pages[pages.length - 2];//上一级页面
+    // beforePage.onLoad()
   },
 
   /**

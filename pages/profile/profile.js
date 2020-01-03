@@ -21,9 +21,10 @@ Page({
         url: 'Notifications/Notifications',
       })
     }else if(idx==1){
-      let array = JSON.stringify(this.data.student)
+      //let array = JSON.stringify(this.data.student)
       wx.navigateTo({
-        url: 'Account/Account?array=' + array,
+        url: 'Account/Account'
+        //url: 'Account/Account?array=' + array,
       })
     }else if(idx==2){
       wx.navigateTo({

@@ -58,7 +58,6 @@ Page({
         app.globalData.applications=res.data.application;
       }
     })
-    console.log(app.globalData);
     wx.switchTab({
       url: '../home/home',
     })
