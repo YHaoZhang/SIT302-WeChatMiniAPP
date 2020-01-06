@@ -5,7 +5,7 @@
   <view class='tetx_v cell'>
     <text>Search Your Dream Universities</text>
     <input type='text' class='input-item' value='{{input}}' placeholder='Universities' bindinput='searchInput' focus='true' ></input>
-    <button form-type='submit' bindtap='searchSubmit' style='background: {{bbb}};'>Search</button>
+    <button form-type='submit' bindtap='searchSubmit' >Search</button>
   </view>
   <block wx:if='{{searchList.length > 0}}'>
     <view class='cell' wx:for='{{searchList}}' wx:key='index'>

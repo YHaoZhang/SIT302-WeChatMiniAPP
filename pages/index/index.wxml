@@ -2,7 +2,7 @@
 <image class='back_imge' src="/img/bg.png" mode='aspectFill'></image>
 <view class='content'>
     <view class="userinfo-nickname-wrapper">
-      <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击获取 userInfo</button>
+      <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">One-click authorization</button>
     </view>
 </view>
 
