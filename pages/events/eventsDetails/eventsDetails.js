@@ -8,17 +8,23 @@ Page({
   data: {
     event:{},
     duration: "",
+    type: 0,
+    idx: 0
   },
   moreClick: function (e) {
     var idx = parseInt(e.currentTarget.id);
     wx.navigateTo({
-      url: 'ComingEvents_choose/ComingEvents_more/CompleteDetails/CompleteDetails?str=' + idx,
+      url: 'ComingEvents_choose/ComingEvents_more/CompleteDetails/CompleteDetails?type=' + this.data.type + '&idx=' + this.data.idx,
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      type: options.type,
+      idx: options.idx
+    })
     if(options.type == "0"){
       this.setData({
         event: app.globalData.activities[options.idx]
