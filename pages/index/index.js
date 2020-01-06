@@ -34,9 +34,25 @@ Page({
         }
       }
     })
-    db.collection('students').doc("c086ceb4-c6f7-41f5-bbf0-0ef4cb9284b7").get({
+    // db.collection('students').doc("c086ceb4-c6f7-41f5-bbf0-0ef4cb9284b7").get({
+    // wx.getSetting({
+    //   success: res => {
+    //     if (res.authSetting['scope.userInfo']) {
+    //       // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+    //       wx.switchTab({
+    //         url: '../home/home',
+    //       })
+    //     }
+    //   }
+    // })
+    db.collection('students').where({
+        _openid: app.globalData.openid
+      }).get({
       success: res => {
-        app.globalData.student=res.data;
+        app.globalData.student = res.data[0];
+      },
+      fail: err => {
+        
       }
     })
     db.collection("events").where({
@@ -51,11 +67,6 @@ Page({
     }).get({
       success: res => {
         app.globalData.activities=res.data;
-      }
-    })
-    db.collection("students").doc("c086ceb4-c6f7-41f5-bbf0-0ef4cb9284b7").get({
-      success: res => {
-        app.globalData.applications=res.data.application;
       }
     })
   },

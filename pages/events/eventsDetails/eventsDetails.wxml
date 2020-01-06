@@ -4,7 +4,7 @@
     <view class='cell'>
         <image mode='widthFix' src='{{event.poster}}'></image>
 				<view class="txt-box">
-					<text class="tit">Deakin University Preaching</text>
+					<text class="tit">{{event.title}}</text>
 					<!-- <text class="info">Deakin University Presentation.</text> -->
 					<text class="more" bindtap="moreClick" id='{{index}}'>Register for this event</text>
 				</view>

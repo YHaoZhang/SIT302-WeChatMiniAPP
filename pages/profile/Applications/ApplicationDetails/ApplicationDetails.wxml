@@ -1,6 +1,6 @@
 <!--pages/profile/Applications/ApplicationDetails/ApplicationDetails.wxml-->
 
-<block wx:for="{{list}}" wx:if="{{index <= thisApplication.current_status}}">
+<block wx:for="{{list}}" wx:key="index" wx:if="{{index <= thisApplication.current_status}}">
     <view class='order'>
 
       <view wx:if="{{index==thisApplication.current_status}}" class='icon in'></view>

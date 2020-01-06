@@ -5,8 +5,8 @@
 		  	<text>Complete Your Details</text>
 		</view>
 		<view class='tetx_v'>
-			<input type="text" class="input-item" placeholder="Name"></input>
-			<input type="text" class="input-item" placeholder="Phone number"></input>
+			<input type="text" class="input-item" placeholder="Name" bindinput="bindNameInput"></input>
+			<input type="text" class="input-item" placeholder="Phone number" bindinput="bindPhoneInput"></input>
       <button form-type='submit' bindtap='formSubmit' style='background: {{bbb}};'>Finish</button>
 		</view>
 </view>
