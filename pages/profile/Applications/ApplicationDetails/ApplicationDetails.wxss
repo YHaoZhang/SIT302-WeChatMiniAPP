@@ -1,15 +1,19 @@
-/* pages/profile/progress/progress.wxss */
-.list-img{
-  width:40rpx;
-  height:40rpx;
-  margin:10rpx 10rpx 0rpx 35rpx;
-}
-.list_centent{
+/* pages/profile/Applications/ApplicationDetails/ApplicationDetails.wxss */
+
+.list_content{
   position: absolute;
   left: 90rpx;
   font-size: 28rpx;
   color: #666666;
    width: calc(100% - 115rpx);
+}
+.list_content .current{
+  position: absolute;
+  left: 90rpx;
+  font-size: 28rpx;
+  color: #000000;
+  width: calc(100% - 115rpx);
+  font-weight: bold;
 }
 .icon{
   width: 25rpx;
@@ -37,7 +41,7 @@
 }
 .on{
   background: #d0d0d0;
-  height: 135rpx;
+  height: 150rpx;
   width: 1px;
-  margin-left: 50rpx;
+  margin-left: 53rpx;
 }

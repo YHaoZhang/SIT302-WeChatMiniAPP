@@ -53,6 +53,11 @@ Page({
         app.globalData.activities=res.data;
       }
     })
+    db.collection("students").doc("c086ceb4-c6f7-41f5-bbf0-0ef4cb9284b7").get({
+      success: res => {
+        app.globalData.applications=res.data.application;
+      }
+    })
   },
 
   bindGetUserInfo (e) {
@@ -74,15 +79,9 @@ Page({
       success: res => {
         console.log('[云函数] [login] user info: ', res)
         app.globalData.openid = res.result.openid
-        // wx.switchTab({
-        //   url: '../home/home',
-        // })
       },
       fail: err => {
         console.error('[云函数] [login] 调用失败', err)
-        // wx.navigateTo({
-        //   url: '../deployFunctions/deployFunctions',
-        // })
       }
     })
   },

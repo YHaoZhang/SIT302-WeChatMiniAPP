@@ -25,7 +25,7 @@
 			</view>
       <view bindtap="moreClick" id='3'>
         <image mode='aspectFill' src='../../img/process.png'></image>
-        <text>Application process</text>
+        <text>Applications</text>
 			</view>
       <view bindtap="moreClick" id='4'>
         <image mode='aspectFill' src='../../img/customer-service.png'></image>

@@ -1,9 +1,25 @@
-<!--pages/profile/Account/Account.wxml-->
+<!-- pages/profile/Account/Account.wxml -->
 <image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
+
 <view class='content'>
-    <view class='cell' wx:for="{{dataSorse}}" wx:key="index">
-			  <text>{{item}}</text>
-       
-        <text class='text2' wx:if="{{index!= 0}}">{{dataSorse2[index]}} </text>
-    </view>
-</view> 
+    <text class='h2'>Information Alter</text>
+    First Name:
+    <input type='text' placeholder='{{student.firstname}}' bindinput='bindFirstNameInput'></input>
+    Last Name:
+    <input type='text' placeholder='{{lastName}}' bindinput='bindLastNameInput'></input>
+    Gender:
+    <picker mode='selector' value='{{gender}}' range='{{type}}' bindchange="bindGenderPicker">
+      <view class='picker'>{{type[gender]}}</view>
+    </picker>
+    Date of birthday:
+    <picker mode='date' value='{{birthday}}' bindchange='bindDatePicker'>
+      <view class='picker'>{{birthday}}</view>
+    </picker>
+    Phone in Australia:
+    <input type='text' placeholder='{{phone_au}}' bindinput='bindPhoneAUInput'></input>
+    Phone in China:
+    <input type='text' placeholder='{{phone_ch}}' bindinput='bindPhoneCHInput'></input>
+    E-Mail:
+    <input type='text' placeholder='{{email}}' bindinput='bindEmailInput'></input>
+    <button form-type='submit' bindtap='save' >Save</button>
+</view>

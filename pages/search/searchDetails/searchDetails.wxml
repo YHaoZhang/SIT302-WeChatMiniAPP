@@ -5,6 +5,8 @@
         <image mode='widthFix' src='{{content.img}}'></image>
 				<view class="txt-box">
 					<text class="tit">{{content.name}}</text>
+          <text class="tit">{{content.phone}}</text>
+          <text class="tit">{{content.address}}</text>
 				</view>
     </view>
 
@@ -19,14 +21,6 @@
           <text>{{item.category}}_</text>
           <text>{{item.name}}</text>
         </view>
-			</view>
-			<view class="box">
-				<text class='name'>Location:</text>
-				<text class='timer'>{{content.address}}</text>
-			</view>
-			<view class="box">
-				<text class='name'>Contact:</text>
-				<text class='timer'>{{content.phone}}</text>
 			</view>
 		</view>
 </view>
