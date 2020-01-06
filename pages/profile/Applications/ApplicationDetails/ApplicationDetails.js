@@ -47,9 +47,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      this.setData({
-        thisApplication: app.globalData.applications[options.idx]
-      })
+    this.setData({
+      thisApplication: app.globalData.student.application[options.idx]
+    })
   },
 
   /**
@@ -63,7 +63,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**
