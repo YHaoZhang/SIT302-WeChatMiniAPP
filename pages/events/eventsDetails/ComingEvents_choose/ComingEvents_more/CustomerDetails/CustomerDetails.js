@@ -1,18 +1,31 @@
 // pages/events/eventsDetails/ComingEvents_choose/ComingEvents_more/CustomerDetails/CustomerDetails.js
+wx.cloud.init({ env: 'acic-environment-efubl' });
+const db = wx.cloud.database();
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    data:[,,,,,,,,,,,,,,,,,,,,,,]
+    participants: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+     //将字符串转换成对象
+     var bean = JSON.parse(options.par);
+     if(options.par == null){
+       wx.showToast({
+         title: '数据为空',
+       })
+       return;
+     }
+       this.setData({
+        participants:bean
+       })    
   },
 
   /**

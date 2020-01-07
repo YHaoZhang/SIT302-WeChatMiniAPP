@@ -26,7 +26,7 @@ Page({
         studentID: this.data.wechatID,
         name: this.data.name,
         phone: this.data.phone
-      }
+      },
     }),
     wx.cloud.callFunction({
       name: 'registerEventStudent',

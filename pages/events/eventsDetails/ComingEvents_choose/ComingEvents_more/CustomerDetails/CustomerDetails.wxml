@@ -1,7 +1,20 @@
 <!--pages/events/eventsDetails/ComingEvents_choose/ComingEvents_more/CustomerDetails/CustomerDetails.wxml-->
+
 <image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
-<view  class='content'>
-		<view class='tetx_v'>
-        <text wx:for="{{data}}" wx:key="index">tom</text>
-		</view>
-</view>
+<scroll-view  scroll-y="true" class='content'>
+  <block wx:if="{{participants.length > 0}}" >
+    <view wx:for="{{participants}}" wx:key="index" class="test">
+				<view class='name'>
+					<text >{{item.name}}</text>
+				</view>
+				<view class='phone'>
+					<text >{{item.phone}}</text>
+				</view>
+    </view>
+  </block>
+  <view wx:if="{{apparticipants.length == 0}}">
+    <view class="test">
+      <text >No poeple registered</text>
+    </view>
+  </view>
+</scroll-view>

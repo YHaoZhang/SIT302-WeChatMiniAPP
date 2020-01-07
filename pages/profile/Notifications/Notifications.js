@@ -1,18 +1,22 @@
 // pages/profile/Notifications/Notifications.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    event_id:{},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      event_id:app.globalData.student.events
+    });
+    
   },
 
   /**
