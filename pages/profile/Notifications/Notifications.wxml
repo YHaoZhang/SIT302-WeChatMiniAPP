@@ -1,16 +1,13 @@
 <!--pages/profile/Notifications/Notifications.wxml-->
 <image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
-<view class='content'>
-		<text class="tit">
-			My events :
-		</text>
-		<view class="detail">
-		  <text class='h2'>ACIC Promotional Lecture</text> 
-			<text class='h3'>9:00am-10:00am, 
-						Monday, 9 September</text> 
-		  <text class='h4'>Level 15, 190 Queen Street
-						Melbourne
-						Victoria, 3000
-						Australia</text> 
-		</view> 
-</view> 
+
+<scroll-view  scroll-y="true" class='content'>
+    <view class='cell' wx:for="{{activities}}" wx:key="index">
+        <!-- <image mode='widthFix' src='{{item.poster}}'></image>
+				<view class="txt-box">
+					<text class="tit">{{item.title}}</text>
+          <text class="info">{{item.brief}}</text>
+				</view> -->
+				<text class="tit">{{item.title}}</text>
+    </view>
+</scroll-view>

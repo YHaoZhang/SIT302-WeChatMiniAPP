@@ -27,6 +27,22 @@ Page({
         name: this.data.name,
         phone: this.data.phone
       },
+      success: function (res) {
+        db.collection("events").where({
+          type: "lecture"
+        }).get({
+          success: res => {
+            app.globalData.lectures = res.data;
+          }
+        })
+        db.collection("events").where({
+          type: "activity"
+        }).get({
+          success: res => {
+            app.globalData.activities = res.data;
+          }
+        })
+      },
     }),
     wx.cloud.callFunction({
       name: 'registerEventStudent',
@@ -34,7 +50,16 @@ Page({
         eventID: this.data.eventID,
         studentID: this.data.studentID,
       },
-    })
+      success: function (res) {
+        db.collection('students').where({
+          _openid: app.globalData.openid
+        }).get({
+        success: res => {
+          app.globalData.student = res.data[0];
+        }
+      })
+      }
+    }),
     wx.hideLoading()
     wx.showToast({
       title: 'successful',

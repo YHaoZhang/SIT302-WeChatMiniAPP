@@ -1,4 +1,6 @@
 // pages/profile/Notifications/Notifications.js
+wx.cloud.init({ env: 'acic-environment-efubl' });
+const db = wx.cloud.database();
 var app = getApp();
 Page({
 
@@ -6,24 +8,46 @@ Page({
    * 页面的初始数据
    */
   data: {
-    event_id:{},
+    activities:{},
+    // event_id:{}
   },
-
+  getHeight: function (e) {
+    var that = this
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          clientHeight: res.windowHeight
+        });
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      event_id:app.globalData.student.events
-    });
-    
+    let that = this;
+    // that.setData({
+    //   event_id:app.globalData.student.events
+    // });
+    var itemList = app.globalData.student.events
+    var items = [];
+    itemList.forEach(function(item, index){
+      db.collection('events').doc(item).get({
+        success: function (res) {
+          items.push(res.data);
+        }
+      })
+    })
+    that.setData({
+        activities:items
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**

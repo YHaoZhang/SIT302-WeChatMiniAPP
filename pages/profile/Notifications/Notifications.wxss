@@ -8,7 +8,53 @@
     font-weight: bold;
     float: left;
 }
- .detail {
+.back_img{
+    width: 100%;
+    float: left;
+    position: fixed;
+}
+.content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0;
+}
+  .content .cell{
+    width: 100%;
+    float: left;
+    margin-bottom: 60rpx;
+}
+  .content .cell image{
+    width: 36%;
+    margin-right: 4%;
+    float: left;
+}
+  .content .cell .txt-box{
+    width: 60%;
+    float: left;
+  }
+  .content .cell .txt-box text{
+      font-size: 40rpx;
+      letter-spacing: 0px;
+      color: black;
+      font-weight: bold;
+      float: left;
+  }
+  .content .cell .txt-box .tit{
+      margin-top: 40rpx;
+  }
+  .tit{
+    width:100%;
+  }
+  .content .cell .txt-box .info{
+    color: rgba(36, 33, 38, 0.5);
+    font-weight: normal;
+    font-size: 24rpx;
+    float: left;
+    padding: 30rpx 0;
+}
+ /* .detail {
     background-color: #afdfc7;
     border-radius: 10rpx;
     border: solid 2px #afdfc7;
@@ -31,4 +77,4 @@
     line-height: 60rpx;
     margin-bottom: 64rpx;
     float: left;
-}
+} */
