@@ -9,7 +9,6 @@ Page({
    */
   data: {
     activities:{},
-    // event_id:{}
   },
   getHeight: function (e) {
     var that = this
@@ -21,25 +20,23 @@ Page({
       }
     });
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let that = this;
-    // that.setData({
-    //   event_id:app.globalData.student.events
-    // });
-    var itemList = app.globalData.student.events
+    var itemList = app.globalData.student.events;
     var items = [];
     itemList.forEach(function(item, index){
       db.collection('events').doc(item).get({
         success: function (res) {
           items.push(res.data);
+          that.setData({
+              activities:items
+          })
         }
       })
-    })
-    that.setData({
-        activities:items
     })
   },
 
