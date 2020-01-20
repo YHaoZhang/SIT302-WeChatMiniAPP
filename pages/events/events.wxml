@@ -21,7 +21,7 @@
 </scroll-view>
     </swiper-item>
     
-    <swiper-item>
+    <swiper-item class='swiper-item'>
       <scroll-view  scroll-y="true" class='content'>
     <view class='cell' wx:for="{{lectures}}" wx:key="index">
         <image mode='widthFix' src='{{item.poster}}'></image>

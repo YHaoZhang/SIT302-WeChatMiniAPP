@@ -1,10 +1,14 @@
 <!--pages/index/index.wxml-->
 <image class='back_imge' src="/img/bg.png" mode='aspectFill'></image>
-<view class='content'>
-    <view class="userinfo-nickname-wrapper">
-      <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">One-click authorization</button>
-    </view>
-</view>
+
+
+<block wx:if='{{!hasUserInfo}}'>
+  <view class='content'>
+    <image mode='aspectFill' src='/img/wx.png' class='icon'></image>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">Please click to login</button>
+  </view>
+</block>
+
 
 
 

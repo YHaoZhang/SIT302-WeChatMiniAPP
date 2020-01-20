@@ -25,10 +25,10 @@
     "pages/profile/Account/Account",
     "pages/profile/Help/Help",
     "pages/profile/Applications/Applications",
-    "pages/profile/Applications/ApplicationDetails/ApplicationDetails"
-    
-    
-    
+    "pages/profile/Applications/ApplicationDetails/ApplicationDetails",
+
+
+    "pages/setting/setting"
   ],
   "window": {
     "backgroundTextStyle": "light",

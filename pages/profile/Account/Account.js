@@ -12,7 +12,7 @@ Page({
     firstName: "",
     lastName: "",
     gender: 0,
-    type: ['Male', 'Female'],
+    type: ['Female', 'Male'],
     birthday: "",
     phone_au: "",
     phone_ch: "",
@@ -24,8 +24,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
   },
-  dataSetting: function (e){
+  dataSetting: function (e) {
     this.setData({
       gender: e.gender,
       firstName: e.firstname,
@@ -37,7 +38,12 @@ Page({
       id: e._id
     })
   },
+
+  /**
+   * Save function
+   */
   save: function () {
+    this.showLoading("Altering")
     wx.cloud.callFunction({
       name: 'update_students',
       data: {
@@ -51,19 +57,23 @@ Page({
         email_address: this.data.email
       },
       success: res => {
-        db.collection('students').doc(this.data.id).get({
-          success: res => {
-            app.globalData.student = res.data
-          }
-        })
         wx.showToast({
-          title: 'successful',
+          title: 'Succeed in altering',
           icon: 'success',
           duration: 1000
         });
-        // wx.switchTab({
-        //   url: '../profile',
-        // })
+        this.showLoading("Updating")
+        db.collection('students').doc(this.data.id).get({
+          success: res => {
+            app.globalData.student = res.data
+            wx.showToast({
+              title: 'Succeed in updating',
+              icon: 'success',
+              duration: 1000
+            });
+            wx.navigateBack({})
+          }
+        })
       },
       fail: err => {
         icon: 'none',
@@ -71,6 +81,21 @@ Page({
       }
     })
   },
+
+  //Loading function
+  showLoading: function (e) {
+    wx.showToast({
+      title: e,
+      mask: true,
+      icon: 'loading'
+    });
+  },
+  
+  //cancel loading 
+  cancelLoading: function () {
+    wx.hideToast();
+  },
+
   bindDatePicker: function (e) {
     this.setData({
       birthday: e.detail.value

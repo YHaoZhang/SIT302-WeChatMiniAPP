@@ -1,19 +1,33 @@
 /* pages/index/index.wxss */
-.back_imge{
-  width: 100%;
-  float: left;
-  height: 100vh;
+page{
+  height:100%;
 }
- button{
-  width: 100%;
+
+.back_imge{
   height: 100%;
-  background-color: #5abd8c;
-  box-shadow: 0px 30rpx 40rpx 0px rgba(90, 189, 140, 0.55);
-  border-radius: 40rpx;
-  font-size: 30rpx;
-  line-height: 130rpx;
-  display: block;
-  color: white;
-  margin-top: 80%;
-  text-align: center;
+  width: 100%;
+  position: fixed;
+  background-size: 100%,100%;
+  z-index:-1;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon{
+  width: 130rpx;
+  height: 130rpx;
+}
+
+button{
+  margin-top: 10px;
+  width: 70%;
+  border-radius: 50px;
+  background-color: #00d66b;
+  color: #ffffff;
+
 }

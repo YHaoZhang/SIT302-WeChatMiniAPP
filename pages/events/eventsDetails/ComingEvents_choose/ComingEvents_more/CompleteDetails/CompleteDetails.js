@@ -52,7 +52,7 @@ Page({
       },
       success: function (res) {
         db.collection('students').where({
-          _openid: app.globalData.openid
+          userID: app.globalData.openid
         }).get({
         success: res => {
           app.globalData.student = res.data[0];

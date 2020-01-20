@@ -2,30 +2,31 @@
 <image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
 
 <scroll-view  scroll-y="true" class='content'>
-    <view class='cell' wx:for="{{activities}}" wx:key="index">
-        <image mode='widthFix' src='{{item.poster}}'></image>
-				<view class="box">
-					<text class="tit">{{item.title}}\n</text>
-          <text class="info">{{item.brief}}</text>
-				</view>
-        <view class="detail-txt">
-			<view class="box">
-				<text class='name'>Start Time:</text>
-				<text class='timer'>{{item.startDate}}</text>
-        <text class='timer'>{{item.startTime}}</text>
-			</view>
-      <view class="box">
-				<text class='name'>Duration:</text>
-				<text class='timer'>{{item.duration}}</text>
-			</view>
-			<view class="box">
-				<text class='name'>Location:</text>
-				<text class='timer'>{{item.address}}</text>
-			</view>
-      <view class="box">
-				<text class='name'>Description:</text>
-				<text class='timer'>{{item.description}}</text>
-			</view>
-		</view>
+
+  <view class='cell' wx:for="{{activities}}" wx:key="index">
+    <image mode='widthFix' src='{{item.poster}}'></image>
+    <view class="box">
+      <text class="tit">{{item.title}}\n</text>
+      <text class="info">{{item.brief}}</text>
     </view>
+    <view class="detail-txt">
+      <view class="box">
+        <text class='name'>Start Time:</text>
+        <text class='timer'>{{item.startDate}}</text>
+        <text class='timer'>{{item.startTime}}</text>
+      </view>
+      <view class="box">
+        <text class='name'>Duration:</text>
+        <text class='timer'>{{item.duration}}</text>
+      </view>
+      <view class="box">
+        <text class='name'>Location:</text>
+        <text class='timer'>{{item.address}}</text>
+      </view>
+      <view class="box">
+        <text class='name'>Description:</text>
+        <text class='timer'>{{item.description}}</text>
+      </view>
+    </view>
+  </view>
 </scroll-view>

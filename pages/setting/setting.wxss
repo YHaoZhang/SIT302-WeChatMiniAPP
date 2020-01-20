@@ -1,0 +1,9 @@
+/* pages/settting/setting.wxss */
+
+button{
+  margin-top: 30px;
+  width: 70%;
+  border-radius: 50px;
+  background-color: #00d66b;
+  color: #ffffff;
+}

@@ -3,7 +3,7 @@
 <view class='content' >
 
   <view class="grxx">
-      <image mode='aspectFill' src='../../img/tx.png'></image>
+      <image mode='aspectFill' src='{{student.avatarUrl}}'></image>
 			<view class="fl">
 				<text class='name'>{{student.firstname}} {{student.lastname}}</text>
          <text class='text'>{{student.address.city}},{{student.address.country}}</text>
@@ -35,7 +35,10 @@
       
 	</view> 
 
-  <view class="manage">
+  <view wx:if="{{student.level == 1}}" class="manage_show">
+      <button bindtap="manageActivities">Manage Activities</button>
+  </view>
+  <view wx:else="{{student.level == 0}}" class="manage_hide">
       <button bindtap="manageActivities">Manage Activities</button>
   </view>
 
