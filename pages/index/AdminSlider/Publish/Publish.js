@@ -24,6 +24,7 @@ Page({
     index:0,
     poster:""
   },
+
   poster:function(){
     var that= this;
     wx.chooseImage({
@@ -35,8 +36,7 @@ Page({
         const tempFilePaths = res.tempFilePaths;
         // 无论用户是从相册选择还是直接用相机拍摄，路径都是在这里面
         var filePath = res.tempFilePaths[0];
-        //将刚才选的照片/拍的 放到下面view视图中
-        
+        //将刚才选的照片/拍的 放到下面view视图中 
         that.setData({
           carWin_img: filePath, //把照片路径存到变量中，
           carWin_img_hidden: false, //让展示照片的view显示
@@ -45,14 +45,20 @@ Page({
         var imgtype = that.data.carWin_img.substring(that.data.carWin_img.lastIndexOf('.'), that.data.carWin_img.length);
         that.setData({
           imgType: imgtype,
-        })
-        
+        });
       }
-    })
-   
-    
+    })   
   },
   publish:function(){
+    console.log(this.data.imgType);
+    if( this.data.imgType == "" ){
+      wx.showModal({
+        title: 'Please choose a poster.',
+        showCancel: false,
+        confirmText: 'Confirm',
+      });
+      return;
+    }
     wx.showLoading({
       title: 'Publishing...',
     })
@@ -114,8 +120,6 @@ Page({
         })
       }
     })
-    
-    
   },
   bindTitleInput: function(e){
     this.setData({

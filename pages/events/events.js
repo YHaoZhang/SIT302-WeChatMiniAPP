@@ -66,8 +66,8 @@ Page({
    */
   onShow: function () {
     this.setData({
-      activities: app.globalData.activities,
-      lectures: app.globalData.lectures
+      activities: app.globalData.activities.reverse(),
+      lectures: app.globalData.lectures.reverse()
     })
   },
 
