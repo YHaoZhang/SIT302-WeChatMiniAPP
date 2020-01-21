@@ -15,46 +15,98 @@ Page({
     phone:""
   },
 
-  hasRegistered: function(){
+  // hasRegistered: function(){
+  //   db.collection("events").where({
+  //     _id: this.data.eventID,
+  //     participants: _.exists(true),
+  //   }).get({
+  //     success: res => {
+  //       console.log(res.data[0].participants);
+  //       var parts = res.data[0].participants;
+  //       console.log(this.data.name,this.data.phone,parts.length);
+  //       for (var i = 0; i < parts.length; i++) { 
+  //         console.log(parts[i].name,parts[i].phone);
+  //         if( parts[i].name == this.data.name && parts[i].phone == this.data.phone){
+  //           console.log("找到重复的");
+  //           return true;
+  //         }
+  //       }
+  //       console.log("未重复");
+  //       return false;
+  //     },
+  //     fail: err => {
+  //       console.log("未重复");
+  //       return false;
+  //     }
+      
+  //   })
+  // },
+
+  formSubmit: function(){
+    //只是等待上一个完成后就进行下一个不关心上一个的状态,没有数据的交互
+    this.test()
+    .then(jj =>{
+      //这里是将test方法中resolve返回值赋值给下一个方法,
+      //在这里可以对数据进行判断是否继续进行
+      return this.runAsync1(jj);
+    })
+ },
+
+ test: function(){
+  let that = this;
+  var flag = false;
+  var p = new Promise(function (resolve, reject) {
     db.collection("events").where({
-      _id: this.data.eventID,
+      _id: that.data.eventID,
       participants: _.exists(true),
     }).get({
       success: res => {
         console.log(res.data[0].participants);
         var parts = res.data[0].participants;
-        console.log(this.data.name,this.data.phone,parts.length);
-        for (var i = 0; i < parts.length; i++) { 
-          console.log(parts[i].name,parts[i].phone);
-          if( parts[i].name == this.data.name && parts[i].phone == this.data.phone){
+        console.log(that.data.name,that.data.phone,parts.length);
+        var i;
+        for (i = 0; i < parts.length; i++) {
+          if( parts[i].name == that.data.name && parts[i].phone == that.data.phone){
             console.log("找到重复的");
-            return true;
+            flag = true;
+            break;
           }
         }
-        console.log("未重复");
-        return false;
+        if( i == parts.length) {
+          console.log("未重复");
+          flag = false;
+        }
+
       },
       fail: err => {
         console.log("未重复");
-        return false;
+        flag = false;
       }
-      
     })
-  },
+    setTimeout(function () {
+    //注意:一旦你把promise的状态定义了哪他的状态就不会再改变.
+    //比如我这里先写的resolve下面又跟着写了reject,reject的代码会执行但是promise的状态是不会变的就是reject
+      resolve(flag);
+    }, 500);
+  })
+  return p;
+},
 
-  formSubmit: function(){
+runAsync1 :function(mm){
+  let that = this;
+  var p = new Promise(function (resolve, reject) {
+    //做一些异步操作
     wx.showLoading({
       title: 'Registering...',
     })
-    var res = this.hasRegistered();
-    if(!res){
+    if(!mm){
       console.log("正在注册");
       wx.cloud.callFunction({
         name: 'registerEvent',
         data: {
-          eventID: this.data.eventID,
-          name: this.data.name,
-          phone: this.data.phone
+          eventID: that.data.eventID,
+          name: that.data.name,
+          phone: that.data.phone
         },
         success: function (res) {
           db.collection("events").where({
@@ -76,8 +128,8 @@ Page({
       wx.cloud.callFunction({
         name: 'registerEventStudent',
         data: {
-          eventID: this.data.eventID,
-          studentID: this.data.studentID,
+          eventID: that.data.eventID,
+          studentID: that.data.studentID,
         },
         success: function (res) {
           db.collection('students').where({
@@ -94,6 +146,7 @@ Page({
       wx.showToast({
         title: 'successful',
         icon: 'success',
+        image: '/img/correct.png',
         duration: 1000
       })
       setTimeout(function(){
@@ -104,16 +157,93 @@ Page({
       console.log("无法注册");
       wx.hideLoading()
       wx.showToast({
-        title: '重复注册',
-        icon: 'false',
-        duration: 2000
+        title: 'repeated',
+        icon: 'none',
+        image: '/img/cross.png',
+        duration: 3000
       })
       setTimeout(function(){
         wx.navigateBack({})
       },2000)
     }
-    
-  },
+    setTimeout(function () {
+      resolve("完成插入");
+    }, 3000);
+  });
+  return p;
+},
+
+  // formSubmit: function(){
+  //   wx.showLoading({
+  //     title: 'Registering...',
+  //   })
+  //   var res = this.hasRegistered();
+  //   if(!res){
+  //     console.log("正在注册");
+  //     wx.cloud.callFunction({
+  //       name: 'registerEvent',
+  //       data: {
+  //         eventID: this.data.eventID,
+  //         name: this.data.name,
+  //         phone: this.data.phone
+  //       },
+  //       success: function (res) {
+  //         db.collection("events").where({
+  //           type: "lecture"
+  //         }).get({
+  //           success: res => {
+  //             app.globalData.lectures = res.data;
+  //           }
+  //         })
+  //         db.collection("events").where({
+  //           type: "activity"
+  //         }).get({
+  //           success: res => {
+  //             app.globalData.activities = res.data;
+  //           }
+  //         })
+  //       },
+  //     }),
+  //     wx.cloud.callFunction({
+  //       name: 'registerEventStudent',
+  //       data: {
+  //         eventID: this.data.eventID,
+  //         studentID: this.data.studentID,
+  //       },
+  //       success: function (res) {
+  //         db.collection('students').where({
+  //           userID: app.globalData.openid
+  //         }).get({
+  //         success: res => {
+  //           app.globalData.student = res.data[0];
+  //         }
+  //       })
+  //       }
+  //     }),
+  //     console.log("注册完成");
+  //     wx.hideLoading()
+  //     wx.showToast({
+  //       title: 'successful',
+  //       icon: 'success',
+  //       duration: 1000
+  //     })
+  //     setTimeout(function(){
+  //       wx.navigateBack({})
+  //     },2000)
+  //   }
+  //   else{
+  //     console.log("无法注册");
+  //     wx.hideLoading()
+  //     wx.showToast({
+  //       title: '重复注册',
+  //       icon: 'false',
+  //       duration: 2000
+  //     })
+  //     setTimeout(function(){
+  //       wx.navigateBack({})
+  //     },2000)
+  //   }
+  // },
 
   /**
    * 生命周期函数--监听页面加载
