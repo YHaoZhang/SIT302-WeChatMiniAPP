@@ -127,7 +127,6 @@ Page({
               level: 0,
               phone_in_aus: '',
               phone_in_china: '',
-              wechatID: '',
               avatarUrl: that.data.avatarUrl,
             },
             success: ess => {

@@ -10,17 +10,6 @@ Page({
   data: {
     activities:{},
   },
-  getHeight: function (e) {
-    var that = this
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
-          clientHeight: res.windowHeight
-        });
-      }
-    });
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
