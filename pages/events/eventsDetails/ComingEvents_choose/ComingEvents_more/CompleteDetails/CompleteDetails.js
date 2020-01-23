@@ -61,25 +61,25 @@ Page({
       participants: _.exists(true),
     }).get({
       success: res => {
-        console.log(res.data[0].participants);
+        // console.log(res.data[0].participants);
         var parts = res.data[0].participants;
-        console.log(that.data.name,that.data.phone,parts.length);
+        // console.log(that.data.name,that.data.phone,parts.length);
         var i;
         for (i = 0; i < parts.length; i++) {
           if( parts[i].name == that.data.name && parts[i].phone == that.data.phone){
-            console.log("找到重复的");
+            // console.log("找到重复的");
             flag = true;
             break;
           }
         }
         if( i == parts.length) {
-          console.log("未重复");
+          // console.log("未重复");
           flag = false;
         }
 
       },
       fail: err => {
-        console.log("未重复");
+        // console.log("未重复");
         flag = false;
       }
     })
@@ -100,7 +100,7 @@ runAsync1 :function(mm){
       title: 'Registering...',
     })
     if(!mm){
-      console.log("正在注册");
+      // console.log("正在注册");
       wx.cloud.callFunction({
         name: 'registerEvent',
         data: {
@@ -141,7 +141,7 @@ runAsync1 :function(mm){
         })
         }
       }),
-      console.log("注册完成");
+      // console.log("注册完成");
       wx.hideLoading()
       wx.showToast({
         title: 'successful',
@@ -154,7 +154,7 @@ runAsync1 :function(mm){
       },2000)
     }
     else{
-      console.log("无法注册");
+      // console.log("无法注册");
       wx.hideLoading()
       wx.showToast({
         title: 'repeated',

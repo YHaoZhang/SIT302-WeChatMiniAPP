@@ -40,7 +40,7 @@ Page({
           })
         },
         fail: err => {
-          console.log("************fail*************")
+          // console.log("************fail*************")
         }
       })
       //this.cancelLoading()

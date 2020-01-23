@@ -19,7 +19,7 @@ Page({
   // setPeocessIcon: function () {
   //   var index = 0//记录状态为1的最后的位置
   //   var processArr = this.data.processData
-  //   // console.log("progress", this.data.detailData.progress)
+  //   console.log("progress", this.data.detailData.progress)
   //   for (var i = 0; i < this.data.detailData.progress.length; i++) {
   //     var item = this.data.detailData.progress[i]
   //     processArr[i].name = item.word

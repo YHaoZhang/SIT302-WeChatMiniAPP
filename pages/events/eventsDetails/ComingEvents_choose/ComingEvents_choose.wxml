@@ -1,5 +1,5 @@
 <!--pages/events/eventsDetails/ComingEvents_choose/ComingEvents_choose.wxml-->
-<image class='back_img' mode='aspectFill' src='../../../../img/bga.png'></image>
+<image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
 
 <view class="swiper-tab">
     <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">Activities</view>

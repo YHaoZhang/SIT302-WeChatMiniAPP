@@ -35,11 +35,11 @@ Page({
     wx.getSetting({
       success(suss) {
         if (suss.authSetting['scope.userInfo']) {
-          console.log("已授权=====")
+          // console.log("已授权=====")
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
             success(res) {
-              console.log("获取用户信息成功", res)
+              // console.log("获取用户信息成功", res)
               that.setData({
                 hasUserInfo: true,
                 nickName: res.userInfo.nickName,
@@ -55,12 +55,12 @@ Page({
               // })
             },
             fail(err) {
-              console.log("获取用户信息失败", err)
+              // console.log("获取用户信息失败", err)
             }
           })
         } else {
-          console.log("未授权=====")
-          that.showSettingToast("请授权")
+          // console.log("未授权=====")
+          that.showSettingToast("Please authorize")
         }
       }
     })
@@ -87,8 +87,8 @@ Page({
 
   showSettingToast: function (e) {
     wx.showModal({
-      title: '提示！',
-      confirmText: '去设置',
+      title: 'Authorization Required',
+      confirmText: 'Go to setting',
       showCancel: false,
       content: e,
       success: function (res) {
@@ -111,7 +111,7 @@ Page({
       userID: that.data.openId
     }).get({
       success: res => {
-        console.log('数据库students查询结果', res.data)
+        // console.log('数据库students查询结果', res.data)
         if (res.data.length == 0) {
           db.collection('students').add({
             data: {
@@ -130,27 +130,27 @@ Page({
               avatarUrl: that.data.avatarUrl,
             },
             success: ess => {
-              console.log("Success: add")
+              // console.log("Success: add")
               db.collection('students').where({
                 userID: that.data.openId
               }).get({
                 success: res =>{
                   app.globalData.student = res.data[0]
-                  console.log('globalData.student 再次获取完成')
+                  // console.log('globalData.student 再次获取完成')
                 },
                 fail: err => {
-                  console.log('globalData.student 再次获取失败')
+                  // console.log('globalData.student 再次获取失败')
                 }
               })
             },
             fail: err => {
-              console.log("Cannot add information to collection 'students'!!")
+              // console.log("Cannot add information to collection 'students'!!")
             }
           })
         } else if (app.globalData.openid === undefined) {
-          console.log("OpenId undefined")
+          // console.log("OpenId undefined")
         } else {
-          console.log("information exit")
+          // console.log("information exit")
           app.globalData.student = res.data[0]
         }
       }
@@ -180,7 +180,7 @@ Page({
       name: 'login',
       data: {},
       success: res => {
-        console.log('[云函数] [login] user info: ', res)
+        // console.log('[云函数] [login] user info: ', res)
         app.globalData.openid = res.result.OPENID
         that.setData({
           openId: res.result.OPENID
@@ -189,8 +189,8 @@ Page({
       fail: err => {
         console.error('[云函数] [login] 调用失败', err)
         wx.showModal({
-          title: '获取openid失败！',
-          confirmText: '请重新加载',
+          title: 'Failed to get openid!',
+          confirmText: 'Please reload',
           showCancel: false,
           content: e,
           success: function (res) {

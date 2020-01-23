@@ -1,5 +1,5 @@
 <!--pages/search/searchResults/searchDetails/searchDetails.html-->
-<image class='back_img' mode='aspectFill' src='../../../img/bga.png'></image>
+<image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
 <view  class='content'>
     <view class='cell'>
         <image mode='widthFix' src='{{content.img}}'></image>

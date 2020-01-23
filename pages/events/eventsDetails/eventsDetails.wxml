@@ -1,5 +1,5 @@
 <!--pages/events/eventsDetails/eventsDetails.wxml-->
-<image class='back_img' mode='aspectFill' src='../../../img/bga.png'></image>
+<image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
 <view  class='content'>
     <view class='cell'>
         <image mode='widthFix' src='{{event.poster}}'></image>

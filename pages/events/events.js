@@ -36,22 +36,11 @@ Page({
       })
     }
   },
-// 获取高度
-  getHeight: function (e) {
-    var that = this
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
-          clientHeight: res.windowHeight
-        });
-      }
-    });
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
 
   /**
@@ -65,9 +54,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var act = app.globalData.activities.concat();
+    var lec = app.globalData.lectures.concat();
     this.setData({
-      activities: app.globalData.activities.reverse(),
-      lectures: app.globalData.lectures.reverse()
+      activities: act.reverse(),
+      lectures: lec.reverse(),
     })
   },
 

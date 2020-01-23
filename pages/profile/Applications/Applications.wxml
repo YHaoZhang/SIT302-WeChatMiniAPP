@@ -1,5 +1,5 @@
 <!--pages/profile/Applications/Applications.wxml-->
-<image class='back_img' mode='aspectFill' src='../../../img/bga.png'></image>
+<image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
 <scroll-view  scroll-y="true" class='content'>
   <block wx:if="{{appList.length > 0}}">
     <view class='cell' wx:for="{{appList}}" wx:key="index">

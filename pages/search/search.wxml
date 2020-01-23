@@ -1,5 +1,5 @@
 <!--pages/search/search.wxml-->
-<image class='back_img' mode='aspectFill' src='../../img/bga.png'></image>
+<image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
 
 <scroll-view  scroll-y="true" class='content'>
   <view class='tetx_v cell'>

@@ -19,7 +19,7 @@ Page({
      var bean = JSON.parse(options.par);
      if(options.par == null){
        wx.showToast({
-         title: '数据为空',
+         title: 'Null data',
        })
        return;
      }

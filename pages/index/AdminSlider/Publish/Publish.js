@@ -50,7 +50,7 @@ Page({
     })   
   },
   publish:function(){
-    console.log(this.data.imgType);
+    // console.log(this.data.imgType);
     if( this.data.imgType == "" ){
       wx.showModal({
         title: 'Please choose a poster.',

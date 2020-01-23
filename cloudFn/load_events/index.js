@@ -10,7 +10,7 @@ const _ = db.command;
 // 云函数入口函数
 exports.main = async (event, context) => {
     var items = [];
-    console.log(event);
+    // console.log(event);
     event.itemList.forEach(function(item, index){
       db.collection('events').doc(item).get({
         success: function (res) {
@@ -18,7 +18,7 @@ exports.main = async (event, context) => {
         }
       })
     })
-    console.log(items);
+    // console.log(items);
   return {
     items
   }
