@@ -88,7 +88,7 @@ Page({
   showSettingToast: function (e) {
     wx.showModal({
       title: 'Authorization Required',
-      confirmText: 'Go to setting',
+      confirmText: 'Setting',
       showCancel: false,
       content: e,
       success: function (res) {
