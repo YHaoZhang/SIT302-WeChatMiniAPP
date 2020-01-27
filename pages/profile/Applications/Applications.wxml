@@ -13,7 +13,7 @@
   </block>
   <view class="cell" wx:if="{{appList.length == 0}}">
     <view class="text-box">
-      <text class="tit">您暂时并无任何申请</text>
+      <text class="noApp">No available applications now</text>
     </view>
   </view>
 </scroll-view>

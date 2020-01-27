@@ -41,3 +41,11 @@
     text-align: center;
     margin-top: 40rpx;
 }
+.noApp{
+  margin-top: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 35rpx;
+}
