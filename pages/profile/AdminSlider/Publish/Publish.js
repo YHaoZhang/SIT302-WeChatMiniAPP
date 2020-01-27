@@ -92,14 +92,14 @@ Page({
               type: "lecture"
             }).get({
               success: res => {
-                app.globalData.lectures = res.data;
+                app.globalData.lectures = res.data.reverse();
               }
             })
             db.collection("events").where({
               type: "activity"
             }).get({
               success: res => {
-                app.globalData.activities = res.data;
+                app.globalData.activities = res.data.reverse();
               }
             })
             wx.showToast({

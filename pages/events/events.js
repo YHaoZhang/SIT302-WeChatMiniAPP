@@ -10,7 +10,8 @@ Page({
   data: {
     currentTab: 0,
     activities:[{}],
-    lectures: [{}]
+    lectures: [{}],
+    times: 0
   },
   moreClick: function(e){
     var idx = parseInt(e.currentTarget.id);
@@ -40,7 +41,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // var act = JSON.parse(JSON.stringify(app.globalData.activities));
+    // var lec = JSON.parse(JSON.stringify(app.globalData.lectures));
+    // this.setData({
+    //   activities: act.reverse(),
+    //   lectures: lec.reverse(),
+    // })
+    // var act = JSON.parse(JSON.stringify(app.globalData.activities));
+    // var lec = JSON.parse(JSON.stringify(app.globalData.lectures));
 
+      // this.setData({
+      //   activities: app.globalData.activities.reverse(),
+      //   lectures: app.globalData.lectures.reverse(),
+      // })
   },
 
   /**
@@ -54,12 +67,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var act = app.globalData.activities.concat();
-    var lec = app.globalData.lectures.concat();
-    this.setData({
-      activities: act.reverse(),
-      lectures: lec.reverse(),
-    })
+    this.data.times++;
+    if( this.data.times == 1 ) {
+      this.setData({
+        activities: app.globalData.activities.reverse(),
+        lectures: app.globalData.lectures.reverse(),
+      })
+    }
+    else {
+      this.setData({
+        activities: app.globalData.activities,
+        lectures: app.globalData.lectures,
+      })
+    }
   },
 
   /**
