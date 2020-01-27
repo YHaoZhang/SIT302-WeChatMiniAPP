@@ -1,4 +1,4 @@
-<!--pages/index/AdminSlider/Publish/Publish.wxml-->
+<!--pages/profile/AdminSlider/Publish/Publish.wxml-->
 
 <view class='content'>
     <text class='h2'>Publish an event</text>

@@ -21,7 +21,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.getData()
+  },
+
+  /**
+   * 获取数据库中活动和学校数据
+   */
+  getData: function() {
+    db.collection("events").where({
+      type: "lecture"
+    }).get({
+      success: res => {
+        app.globalData.lectures = res.data;
+      }
+    })
+    db.collection("events").where({
+      type: "activity"
+    }).get({
+      success: res => {
+        app.globalData.activities = res.data;
+      }
+    })
   },
 
   /**

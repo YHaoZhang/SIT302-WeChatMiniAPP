@@ -1,4 +1,4 @@
-// pages/index/AdminSlider/Publish/Publish.js
+// pages/profile/AdminSlider/Publish/Publish.js
 const app = getApp()
 wx.cloud.init({ env: 'acic-environment-efubl' });
 const db = wx.cloud.database();

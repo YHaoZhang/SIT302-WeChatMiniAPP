@@ -2,7 +2,6 @@
 <image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
 
 <scroll-view  scroll-y="true" class='content'>
-
   <view class='cell' wx:for="{{activities}}" wx:key="index">
     <image mode='widthFix' src='{{item.poster}}'></image>
     <view class="box">

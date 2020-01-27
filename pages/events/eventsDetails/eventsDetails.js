@@ -9,7 +9,8 @@ Page({
     event:{},
     duration: "",
     type: 0,
-    idx: 0
+    idx: 0,
+    hasUserInfo: false
   },
   moreClick: function (e) {
     var idx = parseInt(e.currentTarget.id);
@@ -22,6 +23,7 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
+      hasUserInfo: app.globalData.hasUserInfo,
       type: options.type,
       idx: options.idx
     })
@@ -53,7 +55,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**

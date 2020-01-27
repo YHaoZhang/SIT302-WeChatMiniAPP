@@ -1,4 +1,4 @@
-/* pages/index/AdminSlider/Publish/Publish.wxss */
+/* pages/profile/AdminSlider/Publish/Publish.wxss */
 .h2{
     width: 100%;
     font-size: 48rpx;

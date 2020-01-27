@@ -1,7 +1,14 @@
 <!--pages/profile/profile.wxml-->
 <image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
-<view class='content' >
 
+<block wx:if='{{!hasUserInfo}}'>
+  <view class='content'>
+    <image mode='aspectFill' src='/img/wx.png' class='icon'></image>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">Please click to login</button>
+  </view>
+</block>
+
+<view class='content' wx:if='{{hasUserInfo}}'>
   <view class="grxx">
       <image mode='aspectFill' src='{{student.avatarUrl}}'></image>
 			<view class="fl">
@@ -30,7 +37,7 @@
       <view bindtap="moreClick" id='4'>
         <image mode='aspectFill' src='../../img/customer-service.png'></image>
         <text>Customer Service</text>
-        <button open-type="contact">service</button>
+        <button open-type="contact">survice</button>
 			</view>
       
 	</view> 

@@ -1,4 +1,4 @@
-// pages/index/AdminSlider/AdminSlider.js
+// pages/profile/AdminSlider/AdminSlider.js
 Page({
 
   /**

@@ -50,9 +50,9 @@ Page({
       //在这里可以对数据进行判断是否继续进行
       return this.runAsync1(jj);
     })
- },
+  },
 
- test: function(){
+  test: function(){
   let that = this;
   var flag = false;
   var p = new Promise(function (resolve, reject) {
@@ -90,160 +90,88 @@ Page({
     }, 500);
   })
   return p;
-},
+  },
 
-runAsync1 :function(mm){
-  let that = this;
-  var p = new Promise(function (resolve, reject) {
-    //做一些异步操作
-    wx.showLoading({
-      title: 'Registering...',
-    })
-    if(!mm){
-      // console.log("正在注册");
-      wx.cloud.callFunction({
-        name: 'registerEvent',
-        data: {
-          eventID: that.data.eventID,
-          name: that.data.name,
-          phone: that.data.phone
-        },
-        success: function (res) {
-          db.collection("events").where({
-            type: "lecture"
-          }).get({
+  runAsync1 :function(mm){
+    let that = this;
+    var p = new Promise(function (resolve, reject) {
+      //做一些异步操作
+      wx.showLoading({
+        title: 'Registering...',
+      })
+      if(!mm){
+        // console.log("正在注册");
+        wx.cloud.callFunction({
+          name: 'registerEvent',
+          data: {
+            eventID: that.data.eventID,
+            name: that.data.name,
+            phone: that.data.phone
+          },
+          success: function (res) {
+            db.collection("events").where({
+              type: "lecture"
+            }).get({
+              success: res => {
+                app.globalData.lectures = res.data;
+              }
+            })
+            db.collection("events").where({
+              type: "activity"
+            }).get({
+              success: res => {
+                app.globalData.activities = res.data;
+              }
+            })
+          },
+        }),
+        wx.cloud.callFunction({
+          name: 'registerEventStudent',
+          data: {
+            eventID: that.data.eventID,
+            studentID: that.data.studentID,
+          },
+          success: function (res) {
+            db.collection('students').where({
+              userID: app.globalData.openid
+            }).get({
             success: res => {
-              app.globalData.lectures = res.data;
+              app.globalData.student = res.data[0];
             }
           })
-          db.collection("events").where({
-            type: "activity"
-          }).get({
-            success: res => {
-              app.globalData.activities = res.data;
-            }
-          })
-        },
-      }),
-      wx.cloud.callFunction({
-        name: 'registerEventStudent',
-        data: {
-          eventID: that.data.eventID,
-          studentID: that.data.studentID,
-        },
-        success: function (res) {
-          db.collection('students').where({
-            userID: app.globalData.openid
-          }).get({
-          success: res => {
-            app.globalData.student = res.data[0];
           }
+        }),
+        // console.log("注册完成");
+        wx.hideLoading()
+        wx.showToast({
+          title: 'successful',
+          icon: 'success',
+          image: '/img/correct.png',
+          duration: 1000
         })
-        }
-      }),
-      // console.log("注册完成");
-      wx.hideLoading()
-      wx.showToast({
-        title: 'successful',
-        icon: 'success',
-        image: '/img/correct.png',
-        duration: 1000
-      })
-      setTimeout(function(){
-        wx.navigateBack({})
-      },2000)
-    }
-    else{
-      // console.log("无法注册");
-      wx.hideLoading()
-      wx.showToast({
-        title: 'repeated',
-        icon: 'none',
-        image: '/img/cross.png',
-        duration: 3000
-      })
-      setTimeout(function(){
-        wx.navigateBack({})
-      },2000)
-    }
-    setTimeout(function () {
-      resolve("完成插入");
-    }, 3000);
-  });
-  return p;
-},
-
-  // formSubmit: function(){
-  //   wx.showLoading({
-  //     title: 'Registering...',
-  //   })
-  //   var res = this.hasRegistered();
-  //   if(!res){
-  //     console.log("正在注册");
-  //     wx.cloud.callFunction({
-  //       name: 'registerEvent',
-  //       data: {
-  //         eventID: this.data.eventID,
-  //         name: this.data.name,
-  //         phone: this.data.phone
-  //       },
-  //       success: function (res) {
-  //         db.collection("events").where({
-  //           type: "lecture"
-  //         }).get({
-  //           success: res => {
-  //             app.globalData.lectures = res.data;
-  //           }
-  //         })
-  //         db.collection("events").where({
-  //           type: "activity"
-  //         }).get({
-  //           success: res => {
-  //             app.globalData.activities = res.data;
-  //           }
-  //         })
-  //       },
-  //     }),
-  //     wx.cloud.callFunction({
-  //       name: 'registerEventStudent',
-  //       data: {
-  //         eventID: this.data.eventID,
-  //         studentID: this.data.studentID,
-  //       },
-  //       success: function (res) {
-  //         db.collection('students').where({
-  //           userID: app.globalData.openid
-  //         }).get({
-  //         success: res => {
-  //           app.globalData.student = res.data[0];
-  //         }
-  //       })
-  //       }
-  //     }),
-  //     console.log("注册完成");
-  //     wx.hideLoading()
-  //     wx.showToast({
-  //       title: 'successful',
-  //       icon: 'success',
-  //       duration: 1000
-  //     })
-  //     setTimeout(function(){
-  //       wx.navigateBack({})
-  //     },2000)
-  //   }
-  //   else{
-  //     console.log("无法注册");
-  //     wx.hideLoading()
-  //     wx.showToast({
-  //       title: '重复注册',
-  //       icon: 'false',
-  //       duration: 2000
-  //     })
-  //     setTimeout(function(){
-  //       wx.navigateBack({})
-  //     },2000)
-  //   }
-  // },
+        setTimeout(function(){
+          wx.navigateBack({})
+        },2000)
+      }
+      else{
+        // console.log("无法注册");
+        wx.hideLoading()
+        wx.showToast({
+          title: 'repeated',
+          icon: 'none',
+          image: '/img/cross.png',
+          duration: 3000
+        })
+        setTimeout(function(){
+          wx.navigateBack({})
+        },2000)
+      }
+      setTimeout(function () {
+        resolve("完成插入");
+      }, 3000);
+    });
+    return p;
+  },
 
   /**
    * 生命周期函数--监听页面加载
