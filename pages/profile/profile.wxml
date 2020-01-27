@@ -2,8 +2,8 @@
 <image class='back_img' mode='aspectFill' src='/img/bga.png'></image>
 
 <block wx:if='{{!hasUserInfo}}'>
-  <view class='content'>
-    <image mode='aspectFill' src='/img/wx.png' class='icon'></image>
+  <view class='login'>
+    <image mode='aspectFill' src='/img/wx.png'></image>
     <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">Please click to login</button>
   </view>
 </block>

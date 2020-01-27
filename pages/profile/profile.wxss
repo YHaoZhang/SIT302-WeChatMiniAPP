@@ -1,4 +1,35 @@
 /* pages/profile/profile.wxss */
+page{
+  height: 100%;
+  width: 100%;
+}
+.back_imge{ 
+  height: 100%; 
+  width: 100%; 
+  position: fixed; 
+  background-size: 100%,100%; 
+  z-index:-1; 
+}
+.login{ 
+  width: 100%; 
+  align-items: center; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+} 
+ 
+.login image{ 
+  width: 130rpx; 
+  height: 130rpx; 
+} 
+ 
+.login button{ 
+  margin-top: 10px; 
+  width: 70%; 
+  border-radius: 50px; 
+  background-color: #00d66b; 
+  color: #ffffff; 
+}
 .grxx{
     width: 100%;
     height: 412rpx;
