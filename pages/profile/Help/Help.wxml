@@ -5,14 +5,13 @@
 			Need some help?
 			Contact us!
 		</text>
-
     <view class='cell' wx:for="{{dataSores}}" wx:key="index">
         <view class='header' id='header{{index}}'>
           <image mode='aspectFit' src='{{item.image}}'></image>
 			    <text>{{item.name}}</text>
         </view>
-        <image wx:if="{{index == 4}}" class='image2' mode='aspectFit' src='{{item.content}}'></image>
-        <text  wx:if="{{index!= 4}}"class='text2' >{{item.content}}</text>
+        <image class='image2' mode='aspectFit' src='cloud://acic-environment-efubl.6163-acic-environment-efubl-1300760865/official_account/qrcode.jpg'
+                data-src="cloud://acic-environment-efubl.6163-acic-environment-efubl-1300760865/official_account/qrcode.jpg" bindtap="viewImage"></image>
     </view>
 </view>
 

@@ -6,26 +6,18 @@ Page({
    */
   data: {
       dataSores:[ {
-          image: "/img/address.png",
-          name: "Address",
-        content: "Level 15, 190 Queen Street \n Melbourne \n Victoria, 3000 \n Australia",
-        }, {
-          image: "/img/email.png",
-          name: "E-mail",
-          content: "info@acicmel.com.au",
-        }, {
-          image: "/img/tel.png",
-          name: "Tel",
-          content: "In Australia：(03) 9039 5000 \n In China：400 842 9150",
-        }, {
-          image: "/img/time.png",
-          name: "Office Hours",
-          content: "Monday to Friday, 9:00-18:00",
-        }, {
           image: "/img/wx.png",
           name: "WeChat Official Account",
-          content: "/img/qrcode.png",
+          content: "/img/qrcode.jpg",
         }]
+  },
+
+  viewImage: function(e) {
+    var current = e.target.dataset.src;
+    wx.previewImage({
+      current: current,
+      urls: [current]
+    })
   },
 
   /**
