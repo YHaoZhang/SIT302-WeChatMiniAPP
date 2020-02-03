@@ -18,21 +18,21 @@
   </view> 
 
   <view class="link-box">
-			<view bindtap="moreClick" id='0'> 
-        <image mode='aspectFill' src='../../img/event.png'></image>
-				<text>My events</text>
-			</view>
-			<view bindtap="moreClick" id='1'>
+  		<view bindtap="moreClick" id='0'>
         <image mode='aspectFill' src='../../img/account.png'></image>
-        <text>Account</text>
+        <text>My Account</text>
 			</view>
-			<view bindtap="moreClick" id='2'>
-        <image mode='aspectFill' src='../../img/Help.png'></image>
-        <text>Help</text>
+      <view bindtap="moreClick" id='1'>
+        <image mode='aspectFill' src='../../img/process.png'></image>
+        <text>My Application status</text>
+			</view>
+			<view bindtap="moreClick" id='2'> 
+        <image mode='aspectFill' src='../../img/event.png'></image>
+				<text>My Events</text>
 			</view>
       <view bindtap="moreClick" id='3'>
-        <image mode='aspectFill' src='../../img/process.png'></image>
-        <text>Applications</text>
+        <image mode='aspectFill' src='../../img/Help.png'></image>
+        <text>Help</text>
 			</view>
       <view bindtap="moreClick" id='4'>
         <image mode='aspectFill' src='../../img/customer-service.png'></image>

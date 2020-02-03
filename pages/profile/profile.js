@@ -31,21 +31,19 @@ Page({
     var idx = parseInt(e.currentTarget.id);
     if(idx==0){
       wx.navigateTo({
-        url: 'Notifications/Notifications',
+        url: 'Account/Account'
       })
     }else if(idx==1){
-      //let array = JSON.stringify(this.data.student)
       wx.navigateTo({
-        url: 'Account/Account'
-        //url: 'Account/Account?array=' + array,
+        url: 'Applications/Applications',
       })
     }else if(idx==2){
       wx.navigateTo({
-        url: 'Help/Help',
+        url: 'Notifications/Notifications',
       })
     }else if(idx==3){
       wx.navigateTo({
-        url: 'Applications/Applications',
+        url: 'Help/Help',
       })
     }else {
     }
@@ -55,14 +53,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // if (!app.globalData.hasUserInfo) {
-    //   if (!wx.cloud) {
-    //     wx.redirectTo({
-    //       url: '../chooseLib/chooseLib',
-    //     })
-    //     return
-    //   }
-    // }
     // 获取openid
     this.onGetOpenid();
   },
