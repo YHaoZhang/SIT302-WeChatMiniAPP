@@ -26,7 +26,9 @@
   color: #5abd8c;
   text-align: left;
   margin-left: 40rpx;
-  margin-top: 90rpx;
+  padding-top: 40rpx;
+  padding-bottom: 20rpx;
+  display:block;
 }
 .main-box image,
 .coop-box image {
