@@ -23,12 +23,14 @@
 .main-box text,
 .coop-box text {
   font-size: 48rpx;
+  font-weight:bold;
   color: #5abd8c;
   text-align: left;
   margin-left: 40rpx;
   padding-top: 40rpx;
   padding-bottom: 20rpx;
   display:block;
+  letter-spacing: 1rpx;
 }
 .main-box image,
 .coop-box image {
