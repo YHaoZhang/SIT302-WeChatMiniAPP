@@ -70,8 +70,8 @@ Page({
     this.data.times++;
     if( this.data.times == 1 ) {
       this.setData({
-        activities: app.globalData.activities.reverse(),
-        lectures: app.globalData.lectures.reverse(),
+        activities: app.globalData.activities,
+        lectures: app.globalData.lectures,
       })
     }
     else {
