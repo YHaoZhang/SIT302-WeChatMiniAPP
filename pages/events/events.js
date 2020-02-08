@@ -11,7 +11,6 @@ Page({
     currentTab: 0,
     activities:[{}],
     lectures: [{}],
-    times: 0
   },
   moreClick: function(e){
     var idx = parseInt(e.currentTarget.id);
@@ -41,19 +40,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var act = JSON.parse(JSON.stringify(app.globalData.activities));
-    // var lec = JSON.parse(JSON.stringify(app.globalData.lectures));
-    // this.setData({
-    //   activities: act.reverse(),
-    //   lectures: lec.reverse(),
-    // })
-    // var act = JSON.parse(JSON.stringify(app.globalData.activities));
-    // var lec = JSON.parse(JSON.stringify(app.globalData.lectures));
 
-      // this.setData({
-      //   activities: app.globalData.activities.reverse(),
-      //   lectures: app.globalData.lectures.reverse(),
-      // })
   },
 
   /**
@@ -67,19 +54,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.data.times++;
-    if( this.data.times == 1 ) {
       this.setData({
         activities: app.globalData.activities,
         lectures: app.globalData.lectures,
       })
-    }
-    else {
-      this.setData({
-        activities: app.globalData.activities,
-        lectures: app.globalData.lectures,
-      })
-    }
   },
 
   /**
