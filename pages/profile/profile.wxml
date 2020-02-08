@@ -13,7 +13,6 @@
       <image mode='aspectFill' src='{{student.avatarUrl}}'></image>
 			<view class="fl">
 				<text class='name'>{{student.firstname}} {{student.lastname}}</text>
-         <text class='text'>{{student.address.city}},{{student.address.country}}</text>
 			</view>
   </view> 
 
